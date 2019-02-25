@@ -56,14 +56,20 @@ public class MyDate {
                     setDate(mDate);
                     setMonth(mMonth);
                     setYear(mYear);
-                }
+                } else System.out.println("Wrong Date");
                 break;
             case 2:
-                if (mDate >= 1 && mDate <= 28) {
+                if ((mYear % 4 == 0 && mYear % 100 != 0) || (mYear % 400 == 0))
+                    if (mDate >= 1 && mDate <= 29) {
+                        setDate(mDate);
+                        setMonth(mMonth);
+                        setYear(mYear);
+                    } else System.out.println("Wrong Date");
+                else if (mDate >= 1 && mDate <= 28) {
                     setDate(mDate);
                     setMonth(mMonth);
                     setYear(mYear);
-                }
+                } else System.out.println("Wrong Date");
                 break;
             case 4:
             case 6:
@@ -73,7 +79,7 @@ public class MyDate {
                     setDate(mDate);
                     setMonth(mMonth);
                     setYear(mYear);
-                }
+                } else System.out.println("Wrong Date");
                 break;
             default:
                 System.out.println("The month must be from 1-12");
@@ -83,10 +89,11 @@ public class MyDate {
     }
 
     public void display() {
-        if (getDate() >= 10)
-            if (getMonth() >= 10)
-                System.out.println("Date : " + getDate() + "/" + getMonth() + "/" + getYear());
-            else System.out.println("Date : " + getDate() + "/0" + getMonth() + "/" + getYear());
-        else System.out.println("Date : 0" + getDate() + "/0" + getMonth() + "/" + getYear());
+        if (getDate() != 0)
+            if (getDate() >= 10)
+                if (getMonth() >= 10)
+                    System.out.println("Date : " + getDate() + "/" + getMonth() + "/" + getYear());
+                else System.out.println("Date : " + getDate() + "/0" + getMonth() + "/" + getYear());
+            else System.out.println("Date : 0" + getDate() + "/0" + getMonth() + "/" + getYear());
     }
 }
