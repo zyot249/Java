@@ -48,6 +48,19 @@ public class Library {
         return false;
     }
 
+    public boolean findBook(String keyword) {
+        for (int i = 0; i < Library.nbBooks; i++) {
+            Book curBook = this.books[i];
+            if (curBook.getBookTitle().contains(keyword)){
+                if (curBook.getAvailable() > 0) {
+                    curBook.showBookInfo();
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     public void borrowBook(int bookID) {
         for (int i = 0; i < Library.nbBooks; i++) {
             Book curBook = this.books[i];
