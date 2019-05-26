@@ -11,5 +11,5 @@
     <TextField fx:id="tfShowMessage" layoutX="28.0" layoutY="107.0" prefHeight="25.0" prefWidth="201.0" />
 
     <Button fx:id="btnClose" layoutX="51.0" layoutY="180.0" mnemonicParsing="false" text="Close Window" />
-   <Button fx:id="btnOpenMenu" layoutX="51.0" layoutY="140.0" mnemonicParsing="false" text="Open Menu" />
+   <Button fx:id="btnOpenMenu" layoutX="51.0" layoutY="140.0" mnemonicParsing="false" text="Open Menu"  />
 </AnchorPane>

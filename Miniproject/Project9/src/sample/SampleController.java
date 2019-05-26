@@ -1,16 +1,13 @@
 package sample;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
-import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -48,18 +45,12 @@ public class SampleController implements Initializable{
         });
 
         btnOpenMenu.setOnAction(actionEvent -> {
-            Parent root;
-            try {
-                root = FXMLLoader.load(getClass().getResource("layout/menu_window.fxml"));
-                Stage stage = new Stage();
+                Stage stage = (Stage) ((Node) (actionEvent.getSource())).getScene().getWindow();
                 stage.setTitle("First Menu");
-                stage.setScene(new Scene(root, 300, 275));
-                stage.show();
-
-                ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+                stage.setScene(Main.menuScene);
+                Main.bgMediaPlayer.setOnEndOfMedia(() -> Main.bgMediaPlayer.seek(Duration.ZERO));
+                Main.bgMediaPlayer.setMute(false);
+                Main.bgMediaPlayer.play();
         });
     }
 
