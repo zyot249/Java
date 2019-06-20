@@ -1,5 +1,7 @@
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.nio.file.Paths;
 import java.util.*;
 
@@ -41,13 +43,13 @@ public class CounterWord {
     }
 
 
-    public void readTextByLine(String fileName) throws FileNotFoundException {
+    public void readTextByLine(String fileName) throws Exception {
         String filePath = Paths.get(fileName).toAbsolutePath().toString();
-        File inputFile = new File(filePath);
-        Scanner sc = new Scanner(inputFile);
+        BufferedReader reader = new BufferedReader(new FileReader(filePath));
         HashMap<String, Integer> wordFrequency = new HashMap<>();
-        while (sc.hasNext()) {
-            String words[] = sc.nextLine().split("\\W+");
+        String line;
+        while ((line = reader.readLine()) != null) {
+            String words[] = line.split("\\W+");
             for (String s : words) {
                 if (!s.isEmpty()) {
                     if (wordFrequency.containsKey(s)) {

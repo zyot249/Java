@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="First Demo">
-      <change afterPath="$PROJECT_DIR$/src/battleship/BattleshipMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/battleship/Board.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/battleship/Ship.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/sound/explosion.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/sound/fortunate_son_various_artists.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/sound/lets_battle.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/sound/lose.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/sound/the_strongest.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/sound/water_splashing.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/sound/winning.mp3" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sample/style/first_scene_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/JavaFX.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/JavaFX.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project9/sample/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project9/sample/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/SampleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/SampleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/layout/menu_window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/layout/menu_window.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/layout/sample.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/layout/sample.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,17 +61,7 @@
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/battleship/Board.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2205">
-              <caret line="164" column="34" selection-start-line="164" selection-start-column="34" selection-end-line="164" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -158,7 +130,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -219,6 +190,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -237,9 +209,10 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="ToolWindowPreview.ShowToolbar" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MiniProject9" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -373,6 +346,8 @@
       <option name="presentableId" value="Default" />
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
+      <workItem from="1558890517816" duration="31000" />
+      <workItem from="1558891146773" duration="137000" />
     </task>
     <task id="LOCAL-00001" summary="First Demo">
       <created>1557975121183</created>
@@ -385,7 +360,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1302000" />
+    <option name="totallyTimeSpent" value="1470000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -399,7 +374,7 @@
   <component name="ToolWindowManager">
     <frame x="41" y="25" width="1325" height="743" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" x="513" y="96" width="381" height="612" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.21422987" />
+      <window_info active="true" content_ui="combo" x="513" y="96" width="381" height="612" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.22048475" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -421,6 +396,8 @@
       <window_info anchor="bottom" id="Event Log" order="12" weight="0.32736155" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32736155" />
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.32736155" />
+      <window_info anchor="bottom" id="Docker" order="15" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="16" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24941361" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -471,6 +448,9 @@
       <window_info anchor="right" id="Preview" order="11" weight="0.2877248" />
     </layout-to-restore>
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.css" />
   </component>
@@ -493,13 +473,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/layout/MenuController.java" />
-    <entry file="file://$PROJECT_DIR$/Project9.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PATH_TO_FX$/javafx.graphics.jar!/javafx/stage/Stage.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-420">
@@ -588,16 +561,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sample/style/first_scene_style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -643,10 +606,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/sample/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/battleship/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2205">
+        <state relative-caret-position="667">
           <caret line="164" column="34" selection-start-line="164" selection-start-column="34" selection-end-line="164" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Project9.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -661,6 +641,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
