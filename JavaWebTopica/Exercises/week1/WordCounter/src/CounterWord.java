@@ -47,7 +47,7 @@ public class CounterWord {
         HashMap<String, Integer> wordFrequency = new HashMap<>();
         String line;
         while ((line = reader.readLine()) != null) {
-            String words[] = line.split("\\W+");
+            String[] words = line.split("\\W+");
             for (String s : words) {
                 if (!s.isEmpty()) {
                     if (wordFrequency.containsKey(s)) {
@@ -65,6 +65,6 @@ public class CounterWord {
             System.out.println(entry.getKey() + " : " + entry.getValue());
         }
 
-
+        reader.close();
     }
 }
