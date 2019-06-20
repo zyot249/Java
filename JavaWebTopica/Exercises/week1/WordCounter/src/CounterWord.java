@@ -60,11 +60,11 @@ public class CounterWord {
             }
         }
 
+        reader.close();
+
         Map<String, Integer> sorted = sortByValue(wordFrequency);
         for (Map.Entry<String, Integer> entry : sorted.entrySet()) {
             System.out.println(entry.getKey() + " : " + entry.getValue());
         }
-
-        reader.close();
     }
 }

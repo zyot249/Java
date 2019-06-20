@@ -13,7 +13,7 @@ public class Main {
 
             Instant finish = Instant.now();
             long timeElapsed = Duration.between(start, finish).toMillis();
-            System.out.println("\nExecution Time: " + timeElapsed + " millisecond");
+            System.out.println("\nExecution Time: " + timeElapsed + " milliseconds");
         } catch (Exception e) {
             e.printStackTrace();
         }
