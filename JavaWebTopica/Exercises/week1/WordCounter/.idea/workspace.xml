@@ -2,28 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ca55cc2-d041-4f25-b08b-efb0880dab2e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/case1/One.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/case1/Three.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/case1/Two.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/case2/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/case2/MyClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/case3/Child2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/case3/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/case3/TestInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/case4/Child.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/case4/Parent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/case4/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/case5/Adult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/case5/Baby.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/case5/Human.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/case5/Interface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/case5/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/case6/InterfaceOne.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/case6/One.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/case6/Two.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CounterWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CounterWord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../Miniproject/Project9/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Miniproject/Project9/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,23 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CounterWord.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="62" column="18" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
+            <state relative-caret-position="315">
+              <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#sortByValueJava8#0;class#CounterWord#0" />
@@ -103,7 +72,6 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -120,6 +88,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -183,7 +152,8 @@
       <workItem from="1561014056447" duration="3806000" />
       <workItem from="1561017868724" duration="317000" />
       <workItem from="1561018614379" duration="1139000" />
-      <workItem from="1561020288030" duration="323000" />
+      <workItem from="1561020288030" duration="546000" />
+      <workItem from="1561022664646" duration="245000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1561019513212</created>
@@ -192,17 +162,24 @@
       <option name="project" value="LOCAL" />
       <updated>1561019513212</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update">
+      <created>1561020793481</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1561020793481</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16465000" />
+    <option name="totallyTimeSpent" value="16933000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="41" y="25" width="1325" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27052385" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.275215" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -238,7 +215,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/ext/nashorn.jar!/jdk/nashorn/internal/runtime/arrays/ArrayData.class">
@@ -285,8 +263,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        <state>
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -295,8 +272,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CounterWord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="62" column="18" selection-start-line="62" selection-start-column="18" selection-end-line="62" selection-end-column="18" />
+        <state relative-caret-position="315">
+          <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#sortByValueJava8#0;class#CounterWord#0" />

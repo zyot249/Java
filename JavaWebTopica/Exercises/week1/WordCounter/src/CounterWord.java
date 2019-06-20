@@ -1,6 +1,4 @@
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.nio.file.Paths;
 import java.util.*;
@@ -63,8 +61,8 @@ public class CounterWord {
         }
 
         Map<String, Integer> sorted = sortByValue(wordFrequency);
-        for (Map.Entry<String, Integer> en : sorted.entrySet()) {
-            System.out.println(en.getKey() + " : " + en.getValue());
+        for (Map.Entry<String, Integer> entry : sorted.entrySet()) {
+            System.out.println(entry.getKey() + " : " + entry.getValue());
         }
 
 
