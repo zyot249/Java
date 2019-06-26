@@ -1,5 +1,6 @@
 package com.topica.zyot.shyn.annotation;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -9,9 +10,6 @@ public class Test {
         Class bookClass = Book.class;
         Field[] fields = bookClass.getDeclaredFields(); // getFields() --> get only public field
         for (Field field : fields) {
-            MyNotNull myNotNull = field.getDeclaredAnnotation(MyNotNull.class);
-            if (myNotNull != null)
-                System.out.println("Field " + field.getName() + " can not be null");
             int modifier = field.getModifiers();
             if (Modifier.isFinal(modifier) && Modifier.isStatic(modifier)) {
                 try {
@@ -22,13 +20,25 @@ public class Test {
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 }
+
+            }
+            Annotation[] annotations = field.getDeclaredAnnotations();
+            for (Annotation annotation : annotations) {
+                if (annotation instanceof MyNotNull) {
+                    System.out.println("Field " + field.getName() + " can not be null");
+                }
             }
         }
         Method[] methods = bookClass.getDeclaredMethods();
         for (Method method : methods) {
-            MyNotNull myNotNull = method.getDeclaredAnnotation(MyNotNull.class);
-            if (myNotNull != null)
-                System.out.println("Method " + method.getName() + " can not return null value");
+            Annotation[] annotations = method.getDeclaredAnnotations();
+            for (Annotation annotation : annotations) {
+                if (annotation instanceof MyNotNull) {
+                    System.out.println("Method " + method.getName() + " can not return null value");
+                    break;
+                }
+            }
+
         }
     }
 }
