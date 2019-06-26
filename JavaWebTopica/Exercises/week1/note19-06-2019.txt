@@ -1,0 +1,17 @@
+note : 19/06/2019
+./ generic
+./design pattern
+	23 patterns:	3 types
+		tạo dựng(creational)[5]
+			+) Singleton(8 type)
+				.) Eager initialization
+				.) Lazy initialization
+				.) 
+		cấu trúc(structural)[7-8]
+		ứng xử (behavioral)[the rest]
+	--> easily maintenance
+./ scope
+	+) access modifier
+	+) local/global
+./ enum
+./ auto boxing/ unboxing

@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="PublicFinalAnnotation:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/PublicFinalAnnotation_jar</output-path>
+    <root id="archive" name="PublicFinalAnnotation.jar">
+      <element id="module-output" name="PublicFinalAnnotation" />
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="PublicFinalAnnotation">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../PublicFinalAnnotation/out/artifacts/PublicFinalAnnotation_jar/PublicFinalAnnotation.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

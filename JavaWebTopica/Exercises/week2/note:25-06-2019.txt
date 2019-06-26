@@ -1,0 +1,8 @@
+Exercise : Thay TrungNT9
+1, hoàn thiện bài tập trên lớp(annotation cho cả fields và methods --> xem thg nào đc khai báo, thêm 1 số biến là static final --> đọc giá trị, thử thay đổi)
+2, 	(op1) dùng reflection thay đổi giá trị 1 biến static
+	(op2) khai báo 1 annotation base --> dùng để gen ra các câu lệnh insert, select, update
+	(op3) tạo 1 compile annotation, inject vào ide
+
+note:
+

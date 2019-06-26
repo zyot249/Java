@@ -1,0 +1,43 @@
+- BMP structure
+	http://www.ece.ualberta.ca/~elliott/ee552/studentAppNotes/2003_w/misc/bmp_file_format/bmp_file_format.htm
+	4 parts : Header, InfoHeader, ColorTable, PixelData
+	+) Header: general info of file
+		./ Signature(2B) : "BM" --> type of file
+		./ FileSize(4B)
+		./ reversed(4B) : ????
+		./ DataOffset(4B) : Offset to the beginning of bitmap data
+	+) InfoHeader: More detail info of file
+	+) ColorTable: present colors if BitsPerPixel less than 8
+	+) PixelData:
+- ArrayList vs Vector:
+	Differences:
+		+) synchronization: Vector(1) --> Thread Safe and ArrayList(0) --> Faster
+		+) Data Growth: different resize way: 
+			./ ArrayList increases 50% its size when resize
+			./ Vector increases 100% its size when resize
+		+) Traversal:
+			./ Vector : Iterator and Enumeration
+			./ ArrayList : Iterator
+- tim 1 abstract class trong java, tai sao lai co ham abstract do
+	AbstractCollection: 
+		+) Its abstract methods: 
+			./ Iterator() --> don't know how to traversal
+			./ size()     --> don't know how to cal size
+		+) Its non-abstract methods:
+			./ isEmpty()
+			./ contains()
+			./ add()
+			./ addAll()
+			./ remove()
+			./ removeAll()
+			./ clear()
+			
+- cho 1 file text.txt --> danh sach cac tu, tan suat xuat hien, sort by frequence
+
+Note: abstract methods are set after constructor (may be easy to see)
+	Structure of a class :
+		Constants
+		Attributes
+		Constructor
+		Abstract Method
+		Non-abstract Method	

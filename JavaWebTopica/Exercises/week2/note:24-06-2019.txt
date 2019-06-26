@@ -1,0 +1,41 @@
+Note:
+- Enum: 
+	--> define a set of constants
+	--> provide compile time type safety
+	./ Enum types are effectively final and have no accessible constructors(private constructor)
+	./ Can translate enums into printable strings(by calling their to string method)
+	./ can add arbitrary method and fields and implement arbitrary interfaces but cannot extend other classes
+	./ Can be declared inside or outside of class or other file but not in method
+	./ .values() is added automatically and it returns a array of constants
+	./ default values if not declaring are [0, 1, 2, ...]. However, we can declare : CONSTANT(value)
+- Autoboxing and Unboxing:
+	--> cleaner code
+	./ Autoboxing(boxing) : Primitive --> Reference
+	./ Unboxing : Reference --> Primitive
+- Annotation:
+	./ contains 2 main components:
+		+) Annotation type
+			o) keyword: @interface
+			o) method will not have params and throws clause
+			o) method must return primitives type : String, Class, enum
+			o) can assign default value to method
+		+) Annotation
+
+	./ Annotation types: 
+		+) @Documented 	Whether to put the annotation in Javadocs
+		+) @Inherited 	Whether subclasses get the annotation
+		+) @Target 	Places the annotation can go
+			o) ElementType.TYPE
+			o) ElementType.FIELD
+			o) ElementType.METHOD
+			o) ElementType.PARAMETER
+			o) ElementType.CONSTRUCTOR
+			o) ElementType.LOCAL_VARIABLE
+			o) ElementType.ANNOTATION_TYPE
+			o) ElementType.PACKAGE
+		+) @Retention 	When the annotation is needed
+			o) RetentionPolicy.SOURCE	: Discard during the compile
+			o) RetentionPolicy.CLASS	: Discard during class load
+			o) RetentionPolicy.RUNTIME	: Do not discard
+
+*) Metadata : data about data

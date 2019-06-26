@@ -1,0 +1,2 @@
+input: 1 bức ảnh bitmap 
+output: 1 bức ảnh khác trong đó tất cả màu đỏ ->  màu xanh

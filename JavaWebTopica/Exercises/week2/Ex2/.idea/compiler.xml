@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath>
+          <entry name="$PROJECT_DIR$/../PublicFinalAnnotation/out/artifacts/PublicFinalAnnotation_jar/PublicFinalAnnotation.jar" />
+        </processorPath>
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

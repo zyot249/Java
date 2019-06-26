@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="238.0" prefWidth="269.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SampleController">
+    <Button fx:id="btnFirst" layoutX="51.0" layoutY="44.0" mnemonicParsing="false" text="First Trial" />
+
+
+    <TextField fx:id="tfShowMessage" layoutX="28.0" layoutY="107.0" prefHeight="25.0" prefWidth="201.0" />
+
+    <Button fx:id="btnClose" layoutX="51.0" layoutY="180.0" mnemonicParsing="false" text="Close Window" />
+   <Button fx:id="btnOpenMenu" layoutX="51.0" layoutY="140.0" mnemonicParsing="false" text="Open Menu"  />
+</AnchorPane>

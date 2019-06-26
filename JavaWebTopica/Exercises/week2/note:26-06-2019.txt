@@ -1,0 +1,4 @@
+Reflection:
+	--> examine or modify the behavior of methods, classes, interfaces at runtime
+	can access private vars and methods : getDeclaredField/Method
+	allow to access the field irrespective of the access modifier : setAccessible
