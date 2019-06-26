@@ -2,65 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ace94746-a166-437b-9638-2d6097e1c9b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../week1/DesignPattern/src/Creational/AbstractFactory/AbstractFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../week1/DesignPattern/src/Creational/AbstractFactory/FactoryProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../week1/DesignPattern/src/Creational/AbstractFactory/Rectangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../week1/DesignPattern/src/Creational/AbstractFactory/RoundedRectangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../week1/DesignPattern/src/Creational/AbstractFactory/RoundedShapeFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../week1/DesignPattern/src/Creational/AbstractFactory/RoundedSquare.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../week1/DesignPattern/src/Creational/AbstractFactory/Shape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../week1/DesignPattern/src/Creational/AbstractFactory/ShapeFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../week1/DesignPattern/src/Creational/AbstractFactory/Square.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../week1/DesignPattern/src/Creational/AbstractFactory/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../week1/DesignPattern/src/Creational/Factory/Circle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../week1/DesignPattern/src/Creational/Factory/Rectangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../week1/DesignPattern/src/Creational/Factory/Shape.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../week1/DesignPattern/src/Creational/Factory/ShapeFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../week1/DesignPattern/src/Creational/Factory/Square.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../week1/DesignPattern/src/Creational/Factory/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../week1/DesignPattern/src/Creational/Singleton/EagerInitializedSingleton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../week1/DesignPattern/src/Creational/Singleton/LazyInitializedSingleton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../week1/DesignPattern/src/Creational/Singleton/ThreadSafeSingleton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../week1/DesignPattern/src/Creational/Singleton/ThreadSafeSingleton2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/topica/zyot/shyn/ChangeFinal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/topica/zyot/shyn/Rectangle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Ex2/src/TestAnnotation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PublicFinalAnnotation/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PublicFinalAnnotation/META-INF/services/javax.annotation.processing.Processor" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PublicFinalAnnotation/src/DevLog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PublicFinalAnnotation/src/PublicFinal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../PublicFinalAnnotation/src/PublicFinalProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/AnnotationTest/MyAnnotation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/AnnotationTest/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/AutoboxingTest/Autoboxing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/EnumTest/Enum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/EnumTest/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/ExceptionTest/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/ExceptionTest/MyException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/ExceptionTest/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/InterfaceTest/InterfaceOne.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/InterfaceTest/One.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/InterfaceTest/case1/Child2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../week1/WordCounter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../week1/WordCounter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/src/case1/One.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/src/OverrideTest/One.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/src/case1/Three.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/src/OverrideTest/Three.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/src/case1/Two.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/src/OverrideTest/Two.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/src/case2/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/src/StringTest/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/src/case2/MyClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/src/StringTest/MyClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/src/case3/Child2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/src/case3/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/src/InterfaceTest/case1/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/src/case3/TestInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/src/InterfaceTest/case1/TestInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/src/case4/Child.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/src/ConstructorTest/Child.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/src/case4/Parent.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/src/ConstructorTest/Parent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/src/case4/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/src/ConstructorTest/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/src/case5/Adult.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/src/InheritanceTest/Adult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/src/case5/Baby.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/src/InheritanceTest/Baby.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/src/case5/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/src/InheritanceTest/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/src/case5/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/src/InheritanceTest/Interface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/src/case5/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/src/InheritanceTest/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/src/case6/InterfaceOne.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/src/case6/One.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/src/case6/Two.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/src/InterfaceTest/Two.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AnnotationSQL/src/com/topica/zyot/shyn/main/QueryProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AnnotationSQL/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AnnotationSQL/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AnnotationSQL/src/com/topica/zyot/shyn/main/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AnnotationSQL/src/com/topica/zyot/shyn/main/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/topica/zyot/shyn/ChangeFinal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/topica/zyot/shyn/ChangeFinal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Miniproject/MiniProject9" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Miniproject/MiniProject9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Miniproject/mini-project-oop" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Miniproject/mini-project-oop" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -77,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/topica/zyot/shyn/ChangeFinal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+            <state relative-caret-position="420">
+              <caret line="28" column="60" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -136,6 +84,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -159,10 +108,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Ex1" />
@@ -218,16 +167,19 @@
       <workItem from="1561477757430" duration="2743000" />
       <workItem from="1561515003773" duration="7791000" />
       <workItem from="1561524330747" duration="9000" />
+      <workItem from="1561563106617" duration="340000" />
+      <workItem from="1561565925835" duration="27000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10543000" />
+    <option name="totallyTimeSpent" value="10910000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="41" y="25" width="1325" height="743" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25723222" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2658327" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -313,8 +265,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/topica/zyot/shyn/ChangeFinal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+        <state relative-caret-position="420">
+          <caret line="28" column="60" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

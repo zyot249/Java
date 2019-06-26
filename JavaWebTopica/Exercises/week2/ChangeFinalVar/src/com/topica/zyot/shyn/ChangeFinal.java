@@ -8,9 +8,7 @@ public class ChangeFinal {
         field.setAccessible(true);
         setModifierNotFinal(field);
         field.set(null, newValue);
-//        System.out.println(field.get(null));
     }
-
 
     private static void setModifierNotFinal(Field field) throws Exception {
         field.setAccessible(true);
@@ -28,7 +26,7 @@ public class ChangeFinal {
         changeFinalValue(Rectangle.class.getField("NUMBER_OF_POINTS"), 5);
         System.out.println(Rectangle.NUMBER_OF_POINTS);
 
-        changeFinalValue(Rectangle.class.getField("FOUR"), 5);
+        changeFinalValue(Rectangle.class.getField("FOUR"), 6);
         System.out.println(Rectangle.FOUR);
     }
 
