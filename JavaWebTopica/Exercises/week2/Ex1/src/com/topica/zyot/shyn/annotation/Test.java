@@ -16,7 +16,7 @@ public class Test {
                     System.out.println(Modifier.toString(modifier) + " "
                             + field.getType().getName() + " "
                             + field.getName() + " = "
-                            + field.getFloat(null));
+                            + field.get(null));    //
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 }
