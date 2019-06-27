@@ -16,7 +16,7 @@ public class Test {
                     System.out.println(Modifier.toString(modifier) + " "
                             + field.getType().getName() + " "
                             + field.getName() + " = "
-                            + field.get(null));    //
+                            + field.get(null));    // get static variable --> pass null
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
                 }
