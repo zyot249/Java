@@ -1,31 +1,32 @@
 package com.topica.zyot.shyn.main;
 
+import com.topica.zyot.shyn.annotation.Column;
+import com.topica.zyot.shyn.annotation.Entity;
+
+@Entity
 public class Book {
-    private String title;
-    private String author;
-    private int available;
+    @Column(id = true)
+    public String id;
+    @Column
+    public String title;
+    @Column
+    public String author;
+    @Column
+    public int available;
 
-    public String getTitle() {
-        return title;
+    public Book() {
     }
 
-    public void setTitle(String title) {
+    public Book(String id, String title, String author, int available) {
+        this.id = id;
         this.title = title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
         this.author = author;
+        this.available = available;
     }
 
-    public int getAvailable() {
-        return available;
-    }
-
-    public void setAvailable(int available) {
+    public Book(String title, String author, int available) {
+        this.title = title;
+        this.author = author;
         this.available = available;
     }
 }

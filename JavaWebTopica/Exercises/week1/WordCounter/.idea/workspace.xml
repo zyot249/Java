@@ -2,7 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ca55cc2-d041-4f25-b08b-efb0880dab2e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week2/AnnotationSQL/src/com/topica/zyot/shyn/annotation/Column.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week2/AnnotationSQL/src/com/topica/zyot/shyn/annotation/Delete.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week2/AnnotationSQL/src/com/topica/zyot/shyn/annotation/Entity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week2/AnnotationSQL/src/com/topica/zyot/shyn/annotation/Query.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week2/Ex1/src/com/topica/zyot/shyn/annotation/MyNull.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week3/MyThreadPool/src/com/topica/zyot/shyn/threadpool/CustomThreadPool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week3/MyThreadPool/src/com/topica/zyot/shyn/threadpool/Task.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week3/MyThreadPool/src/com/topica/zyot/shyn/threadpool/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week3/MyThreadPool/src/com/topica/zyot/shyn/threadpool/TestTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week3/ReadLargeFile/src/com/topica/zyot/shyn/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week3/Socket/src/com/topica/zyot/shyn/TestClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week3/Socket/src/com/topica/zyot/shyn/TestServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/.idea/dictionaries/shyn.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/Exception/TestException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/ThreadTest/MyRunnable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../TestForExam/src/ThreadTest/TestThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../JavaVSCode/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../JavaVSCode/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week2/AnnotationSQL/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../week2/AnnotationSQL/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week2/AnnotationSQL/out/production/AnnotationSQL/com/topica/zyot/shyn/main/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../week2/AnnotationSQL/out/production/AnnotationSQL/com/topica/zyot/shyn/main/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week2/AnnotationSQL/out/production/AnnotationSQL/com/topica/zyot/shyn/main/Query.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week2/AnnotationSQL/out/production/AnnotationSQL/com/topica/zyot/shyn/main/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../week2/AnnotationSQL/out/production/AnnotationSQL/com/topica/zyot/shyn/main/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week2/AnnotationSQL/src/com/topica/zyot/shyn/main/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../week2/AnnotationSQL/src/com/topica/zyot/shyn/main/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week2/AnnotationSQL/src/com/topica/zyot/shyn/main/Query.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week2/AnnotationSQL/src/com/topica/zyot/shyn/main/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../week2/AnnotationSQL/src/com/topica/zyot/shyn/main/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week2/ChangeFinalVar/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../week2/ChangeFinalVar/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week2/ChangeFinalVar/src/com/topica/zyot/shyn/ChangeFinal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../week2/ChangeFinalVar/src/com/topica/zyot/shyn/ChangeFinal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week2/Ex1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../week2/Ex1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week2/Ex1/out/production/Ex1/com/topica/zyot/shyn/annotation/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../week2/Ex1/out/production/Ex1/com/topica/zyot/shyn/annotation/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week2/Ex1/out/production/Ex1/com/topica/zyot/shyn/annotation/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../week2/Ex1/out/production/Ex1/com/topica/zyot/shyn/annotation/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week2/Ex1/src/com/topica/zyot/shyn/annotation/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../week2/Ex1/src/com/topica/zyot/shyn/annotation/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week2/Ex1/src/com/topica/zyot/shyn/annotation/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../week2/Ex1/src/com/topica/zyot/shyn/annotation/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Miniproject/MiniProject9" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Miniproject/MiniProject9" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Miniproject/mini-project-oop" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Miniproject/mini-project-oop" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/TestForExam.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/TestForExam.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/out/production/TestForExam/AnnotationTest/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/out/production/TestForExam/AnnotationTest/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/out/production/TestForExam/AutoboxingTest/Autoboxing.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/out/production/TestForExam/AutoboxingTest/Autoboxing.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/out/production/TestForExam/EnumTest/Enum$AbstractMethodInside$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/out/production/TestForExam/EnumTest/Enum$AbstractMethodInside$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/out/production/TestForExam/EnumTest/Enum$AbstractMethodInside.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/out/production/TestForExam/EnumTest/Enum$AbstractMethodInside.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/out/production/TestForExam/EnumTest/Enum$Date$week.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/out/production/TestForExam/EnumTest/Enum$Date$week.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/out/production/TestForExam/EnumTest/Enum$Date.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/out/production/TestForExam/EnumTest/Enum$Date.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/out/production/TestForExam/EnumTest/Enum$Day_of_week.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/out/production/TestForExam/EnumTest/Enum$Day_of_week.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/out/production/TestForExam/EnumTest/Enum.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/out/production/TestForExam/EnumTest/Enum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../TestForExam/src/AnnotationTest/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../TestForExam/src/AnnotationTest/Test.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,7 +63,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
+            <state relative-caret-position="210">
               <caret line="15" column="82" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -31,8 +75,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CounterWord.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="60" column="9" lean-forward="true" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+            <state relative-caret-position="294">
+              <caret line="45" column="77" lean-forward="true" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="77" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#sortByValueJava8#0;class#CounterWord#0" />
@@ -61,13 +105,6 @@
       </list>
     </option>
   </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-      </list>
-    </option>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="41" />
     <option name="y" value="27" />
@@ -80,6 +117,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -96,8 +135,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -164,6 +201,7 @@
       <workItem from="1561020288030" duration="546000" />
       <workItem from="1561022664646" duration="268000" />
       <workItem from="1561024429288" duration="288000" />
+      <workItem from="1562225691697" duration="218000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1561019513212</created>
@@ -204,13 +242,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17244000" />
+    <option name="totallyTimeSpent" value="17462000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="41" y="25" width="1325" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27990618" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28459734" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -294,7 +332,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
+        <state relative-caret-position="210">
           <caret line="15" column="82" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -304,8 +342,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CounterWord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
-          <caret line="60" column="9" lean-forward="true" selection-start-line="60" selection-start-column="9" selection-end-line="60" selection-end-column="9" />
+        <state relative-caret-position="294">
+          <caret line="45" column="77" lean-forward="true" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="77" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#sortByValueJava8#0;class#CounterWord#0" />

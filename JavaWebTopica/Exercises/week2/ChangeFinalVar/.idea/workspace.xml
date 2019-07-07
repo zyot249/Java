@@ -2,11 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ace94746-a166-437b-9638-2d6097e1c9b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../AnnotationSQL/src/com/topica/zyot/shyn/main/QueryProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AnnotationSQL/src/com/topica/zyot/shyn/annotation/Column.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AnnotationSQL/src/com/topica/zyot/shyn/annotation/Delete.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AnnotationSQL/src/com/topica/zyot/shyn/annotation/Entity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AnnotationSQL/src/com/topica/zyot/shyn/annotation/Query.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Ex1/src/com/topica/zyot/shyn/annotation/MyNull.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AnnotationSQL/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AnnotationSQL/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AnnotationSQL/out/production/AnnotationSQL/com/topica/zyot/shyn/main/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AnnotationSQL/out/production/AnnotationSQL/com/topica/zyot/shyn/main/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AnnotationSQL/out/production/AnnotationSQL/com/topica/zyot/shyn/main/Query.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AnnotationSQL/out/production/AnnotationSQL/com/topica/zyot/shyn/main/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AnnotationSQL/out/production/AnnotationSQL/com/topica/zyot/shyn/main/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AnnotationSQL/src/com/topica/zyot/shyn/main/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AnnotationSQL/src/com/topica/zyot/shyn/main/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AnnotationSQL/src/com/topica/zyot/shyn/main/Query.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../AnnotationSQL/src/com/topica/zyot/shyn/main/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AnnotationSQL/src/com/topica/zyot/shyn/main/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/topica/zyot/shyn/ChangeFinal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/topica/zyot/shyn/ChangeFinal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ex1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ex1/out/production/Ex1/com/topica/zyot/shyn/annotation/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex1/out/production/Ex1/com/topica/zyot/shyn/annotation/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ex1/out/production/Ex1/com/topica/zyot/shyn/annotation/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex1/out/production/Ex1/com/topica/zyot/shyn/annotation/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ex1/src/com/topica/zyot/shyn/annotation/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex1/src/com/topica/zyot/shyn/annotation/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ex1/src/com/topica/zyot/shyn/annotation/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Ex1/src/com/topica/zyot/shyn/annotation/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../Miniproject/MiniProject9" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Miniproject/MiniProject9" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../Miniproject/mini-project-oop" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Miniproject/mini-project-oop" afterDir="false" />
     </list>
@@ -25,8 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/topica/zyot/shyn/ChangeFinal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="60" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
+            <state relative-caret-position="390">
+              <caret line="26" column="55" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -84,8 +98,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -108,13 +120,15 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Ex1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -168,18 +182,27 @@
       <workItem from="1561515003773" duration="7791000" />
       <workItem from="1561524330747" duration="9000" />
       <workItem from="1561563106617" duration="340000" />
-      <workItem from="1561565925835" duration="27000" />
+      <workItem from="1561565925835" duration="93000" />
+      <workItem from="1561622971136" duration="906000" />
+      <workItem from="1561627661356" duration="214000" />
     </task>
+    <task id="LOCAL-00001" summary="update">
+      <created>1561565970005</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1561565970005</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10910000" />
+    <option name="totallyTimeSpent" value="12096000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="41" y="25" width="1325" height="743" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2658327" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.275215" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -212,6 +235,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar:///usr/lib/jvm/java-8-openjdk-amd64/jre/lib/rt.jar!/java/lang/Boolean.class">
@@ -265,8 +292,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/topica/zyot/shyn/ChangeFinal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="60" selection-start-line="28" selection-start-column="60" selection-end-line="28" selection-end-column="60" />
+        <state relative-caret-position="390">
+          <caret line="26" column="55" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

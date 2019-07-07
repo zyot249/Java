@@ -1,7 +1,9 @@
 package com.topica.zyot.shyn.annotation;
 
+
 public class Book {
     public static final float DISCOUNT = 0.25f;
+    @MyNull
     @MyNotNull
     private String title;
     @MyNotNull

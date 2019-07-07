@@ -24,9 +24,9 @@ public class Test {
             }
             Annotation[] annotations = field.getDeclaredAnnotations();
             for (Annotation annotation : annotations) {
-                if (annotation instanceof MyNotNull) {
-                    System.out.println("Field " + field.getName() + " can not be null");
-                }
+//                if (annotation instanceof MyNotNull) {
+                System.out.println("Field " + field.getName() + " can not be null");
+                //}
             }
         }
         Method[] methods = bookClass.getDeclaredMethods();
