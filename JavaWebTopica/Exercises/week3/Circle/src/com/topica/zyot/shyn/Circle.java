@@ -3,6 +3,7 @@ package com.topica.zyot.shyn;
 import java.util.Random;
 
 public class Circle implements Comparable {
+    private final int RANGE_OF_RADIUS = 100;
     private int radius;
 
     public int getRadius() {
@@ -14,7 +15,7 @@ public class Circle implements Comparable {
     }
 
     public Circle() {
-        this.radius = new Random().nextInt(100) + 1;
+        this.radius = new Random().nextInt(RANGE_OF_RADIUS) + 1;
     }
 
     @Override

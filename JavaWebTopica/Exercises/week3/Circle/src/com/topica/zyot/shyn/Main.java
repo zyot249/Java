@@ -9,12 +9,13 @@ import java.util.List;
 
 public class Main {
     private static final int NUM_OF_CIRCLES = 100;
-    private static final String WRONG_INPUT_MSG = "Wrong Input! Input must be INTEGER!";
-    private static final String NEGATIVE_INPUT_MSG = "The area of a circle must be greater than 0!";
-    private static final String REQUEST_INPUT_MSG = "\nEnter the value of area(Integer) : ";
+    private static final String MSG_WRONG_INPUT = "Wrong Input! Input must be INTEGER!";
+    private static final String MSG_NEGATIVE_INPUT = "The area of a circle must be greater than 0!";
+    private static final String MSG_REQUEST_INPUT = "\nEnter the value of area(Integer) : ";
+    private static final String MSG_NULL_POINTER = "Null pointer!";
+    private static final String MSG_EMPTY_LIST = "The list is EMPTY!";
 
     public static void main(String[] args) {
-
         List<Circle> circles = new ArrayList<>();
         for (int i = 0; i < NUM_OF_CIRCLES; i++) {
             circles.add(new Circle());
@@ -33,26 +34,34 @@ public class Main {
         InputStreamReader inputStreamReader = new InputStreamReader(System.in);
         BufferedReader reader = new BufferedReader(inputStreamReader);
         // initial area is negative
-        int area = -1;
-        while (area < 0) {
-            System.out.print(REQUEST_INPUT_MSG);
+        int inputArea = -1;
+        while (inputArea < 0) {
+            System.out.print(MSG_REQUEST_INPUT);
             try {
-                area = Integer.valueOf(reader.readLine());
-                if (area < 0)
-                    System.out.println(NEGATIVE_INPUT_MSG);
+                inputArea = Integer.valueOf(reader.readLine());
+                if (inputArea < 0)
+                    System.out.println(MSG_NEGATIVE_INPUT);
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (NumberFormatException e) {
-                System.out.println(WRONG_INPUT_MSG);
+                System.out.println(MSG_WRONG_INPUT);
             }
         }
-        System.out.println("Show input: " + area);
-        getIndex(area, circles);
+        System.out.println("Show input: " + inputArea);
+        getIndexesAndArea(inputArea, circles);
     }
 
-    private static void getIndex(int area, List<Circle> circles) {
+    private static void getIndexesAndArea(int area, List<Circle> circles) {
+        if (circles == null) {
+            System.out.println(MSG_NULL_POINTER);
+            return;
+        }
+        if (circles.isEmpty()){
+            System.out.println(MSG_EMPTY_LIST);
+            return;
+        }
         ArrayList<Integer> indexes = new ArrayList<>(); // indexes of needed circles
-        double radius = Math.sqrt((double)area / Math.PI);
+        double radius = Math.sqrt((double) area / Math.PI);
         // initial delta = different btw needed radius and radius of first circle
         double delta = Math.abs((double) (radius - circles.get(0).getRadius()));
         for (Circle circle : circles) {
