@@ -2,20 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ca55cc2-d041-4f25-b08b-efb0880dab2e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../week3/ServerManagement/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../week3/ServerManagement/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../week3/ServerManagement/src/main/java/com/topica/zyot/shyn/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../week3/ServerManagement/src/main/java/com/topica/zyot/shyn/Client1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../week3/ServerManagement/src/main/java/com/topica/zyot/shyn/Client2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../week3/ServerManagement/src/main/java/com/topica/zyot/shyn/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../week3/TransferThroughSocket/src/com/topica/zyot/shyn/nio/ClientV2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../week3/TransferThroughSocket/src/com/topica/zyot/shyn/nio/ServerV2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../week3/Circle/src/com/topica/zyot/shyn/Circle.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../week3/Circle/src/com/topica/zyot/shyn/Circle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week3/ClientServerTransferring/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week3/ClientServerTransferring/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week3/ClientServerTransferring/src/main/java/com/topica/zyot/shyn/MyConst.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week3/ClientServerTransferring/src/main/java/com/topica/zyot/shyn/io/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week3/ClientServerTransferring/src/main/java/com/topica/zyot/shyn/io/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week3/ClientServerTransferring/src/main/java/com/topica/zyot/shyn/nio/Client.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week3/ClientServerTransferring/src/main/java/com/topica/zyot/shyn/nio/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week3/FirstConnectionToDatabase/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week3/FirstConnectionToDatabase/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week3/ServerManagement/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../week3/TransferThroughSocket/src/com/topica/zyot/shyn/MyConst.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../week3/Circle/src/com/topica/zyot/shyn/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../week3/Circle/src/com/topica/zyot/shyn/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../week3/TransferThroughSocket/src/com/topica/zyot/shyn/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../week3/TransferThroughSocket/src/com/topica/zyot/shyn/io/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../week3/TransferThroughSocket/src/com/topica/zyot/shyn/ClientV2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../week3/TransferThroughSocket/src/com/topica/zyot/shyn/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../week3/TransferThroughSocket/src/com/topica/zyot/shyn/io/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../week3/TransferThroughSocket/src/com/topica/zyot/shyn/ServerV2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week3/ServerManagement/src/main/java/com/topica/zyot/shyn/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../week3/FirstConnectionToDatabase/src/main/java/com/topica/zyot/shyn/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week3/ServerManagement/src/main/java/com/topica/zyot/shyn/Client1.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../week3/ServerManagement/src/main/java/com/topica/zyot/shyn/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week3/ServerManagement/src/main/java/com/topica/zyot/shyn/Client2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week3/ServerManagement/src/main/java/com/topica/zyot/shyn/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../week3/ServerManagement/src/main/java/com/topica/zyot/shyn/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../week3/TransferThroughSocket/src/com/topica/zyot/shyn/io/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../week3/TransferThroughSocket/src/com/topica/zyot/shyn/io/Client.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../Miniproject/MiniProject9" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Miniproject/MiniProject9" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../Miniproject/mini-project-oop" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../Miniproject/mini-project-oop" afterDir="false" />
     </list>
@@ -30,32 +33,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="15" column="82" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/CounterWord.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-293">
-              <caret line="9" column="85" lean-forward="true" selection-start-line="9" selection-start-column="85" selection-end-line="9" selection-end-column="85" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -88,6 +66,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -104,7 +83,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -173,6 +151,7 @@
       <workItem from="1561024429288" duration="288000" />
       <workItem from="1562225691697" duration="218000" />
       <workItem from="1562574729476" duration="255000" />
+      <workItem from="1562946030327" duration="99000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1561019513212</created>
@@ -213,13 +192,12 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17717000" />
+    <option name="totallyTimeSpent" value="17816000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="41" y="25" width="1325" height="743" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28928852" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29397967" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -301,20 +279,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="jar://$USER_HOME$/Downloads/jdk1.8.0_211/src.zip!/java/io/BufferedReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="82" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
+        <state relative-caret-position="155">
+          <caret line="114" column="11" selection-start-line="114" selection-start-column="11" selection-end-line="114" selection-end-column="11" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#3011#3012#0" expanded="true" />
+            <element signature="e#3058#3059#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CounterWord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-293">
-          <caret line="9" column="85" lean-forward="true" selection-start-line="9" selection-start-column="85" selection-end-line="9" selection-end-column="85" />
+        <state relative-caret-position="150">
+          <caret line="45" column="45" selection-start-line="45" selection-start-column="45" selection-end-line="45" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="82" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

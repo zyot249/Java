@@ -5,47 +5,68 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 
 public class Server {
+    private static final String NOTIFY_SUCCESSFUL_CONNECTED = "\nSuccessfully Connected!";
     private static final int SERVER_PORT = 6969;
     public static final int SIZE_OF_BUFFER = 64 * 1024;
     private static ServerSocket mServerSocket;
+    private static ArrayList<WorkerThread> workers;
+    private static final int mMaxThreads = 1;
 
     public static void main(String[] args) throws IOException {
         mServerSocket = new ServerSocket(SERVER_PORT);
-        ConnectionThread thread1 = new ConnectionThread();
-        ConnectionThread thread2 = new ConnectionThread();
-        thread1.start();
-//        thread2.start();
-        while (thread1.isAlive() || thread2.isAlive()) ;
-        mServerSocket.close();
+        workers = new ArrayList<>();
+        while (true) {
+            if (workers.size() < mMaxThreads) {
+                Socket socket = mServerSocket.accept();
+                System.out.println(NOTIFY_SUCCESSFUL_CONNECTED);
+                WorkerThread workerThread = new WorkerThread(socket);
+                workers.add(workerThread);
+                workerThread.start();
+            }
+        }
     }
 
-    private static class ConnectionThread extends Thread {
+    private static class WorkerThread extends Thread {
+        private Socket socket;
+
+        private static final String NOTIFY_FINISHED = "Finished!";
+        private static final String MSG_FINISH = "exit";
+
+        WorkerThread(Socket socket) {
+            this.socket = socket;
+        }
 
         @Override
         public void run() {
-            while (true) {
-                try {
-                    Socket socket = mServerSocket.accept();
-                    DataInputStream inputStream = new DataInputStream(socket.getInputStream());
-                    DataOutputStream outputStream = new DataOutputStream(socket.getOutputStream());
-                    while (!socket.isClosed()) {
-                        byte[] buffer = new byte[SIZE_OF_BUFFER];
-                        int readBytes = inputStream.read(buffer);
-                        StringBuilder message = new StringBuilder();
-                        for (int i = 0; i < readBytes; i++) {
-                            message.append((char) buffer[i]);
-                        }
-                        if (message.toString().equalsIgnoreCase("exit"))
-                            socket.close();
-                        if (!message.toString().isEmpty())
-                            System.out.println(message);
+            try {
+//                System.out.println(NOTIFY_SUCCESSFUL_CONNECTED);
+                System.out.println(socket);
+                DataInputStream inputStream = new DataInputStream(socket.getInputStream());
+                DataOutputStream outputStream = new DataOutputStream(socket.getOutputStream());
+                while (true) {
+                    byte[] buffer = new byte[SIZE_OF_BUFFER];
+                    int readBytes = inputStream.read(buffer);
+                    StringBuilder message = new StringBuilder();
+                    for (int i = 0; i < readBytes; i++) {
+                        message.append((char) buffer[i]);
                     }
-                } catch (IOException e) {
-                    e.printStackTrace();
+                    if (!message.toString().isEmpty()) {
+                        if (message.toString().equalsIgnoreCase(MSG_FINISH)) {
+                            System.out.println(NOTIFY_FINISHED);
+                            break;
+                        } else {
+                            System.out.println(message);
+                        }
+                    }
                 }
+                socket.close();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
+            workers.remove(this);
         }
     }
 }

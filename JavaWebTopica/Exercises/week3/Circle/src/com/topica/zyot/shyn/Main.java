@@ -4,8 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+
+import static java.util.Collections.sort;
 
 public class Main {
     private static final int NUM_OF_CIRCLES = 100;
@@ -25,7 +26,7 @@ public class Main {
             System.out.println("Circle " + circles.indexOf(circle) + ": \t radius = " + circle.getRadius());
         }
         List<Circle> sortCircles = new ArrayList<>(circles);
-        Collections.sort(sortCircles);
+        sort(sortCircles);
         System.out.println("\n-----------AFTER SORT-----------:");
         for (Circle circle : sortCircles) {
             System.out.println("Circle " + circles.indexOf(circle) + ": \t radius = " + circle.getRadius());
