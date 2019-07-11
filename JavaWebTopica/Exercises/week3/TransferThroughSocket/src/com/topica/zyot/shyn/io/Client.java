@@ -9,7 +9,7 @@ public class Client {
     private static final String SERVER_IP = "127.0.0.1";
     private static final int SERVER_PORT = 6969;
     private static final int FIRST_POSITION = 0;
-    private static final String FILE_NAME = "output/4K Video (Ultra HD) - The Secret Beach - Wonders of Nature with Relaxing Music.mp4";
+    private static final String FILE_NAME = "output/outputfile";
 
 
     public static void main(String[] args) throws IOException {
