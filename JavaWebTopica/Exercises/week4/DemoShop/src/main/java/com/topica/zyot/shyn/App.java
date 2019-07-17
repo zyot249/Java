@@ -13,7 +13,7 @@ public class App {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-            saveOrder("ORDER006", 1, 500, connection);
+            saveOrder("ORDER001", 1, 500, connection);
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         } finally {
