@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Topica Native">
+    <meta name="author" content="Shyn">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exam</title>
+    <link rel="stylesheet" type="text/css" href="./style/clockstyle.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./style/examstyle.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="my-container">
+        <!-- Header -->
+        <div class="my-header font-weight-bold">
+            <div class="row">
+                <div class="col-sm-5 color-yellow">
+                    <p>
+                        <div style="display: inline">
+                            <em class="fas fa-arrow-left" id="btnBack"></em>
+                            <img id="imgLogo" src="./image/nativegen5v2.png" alt="logo" height="30px">
+                        </div>
+                        Native AI Test
+                    </p>
+                </div>
+                <div class="col-sm-2 count-clock" style="margin: auto">
+                    <fieldset>
+                        <legend class="font-small">Thời gian học</legend>
+                        <div class="clock">
+                            <div class="hours">
+                                <div class="first">
+                                    <div class="number">0</div>
+                                </div>
+                                <div class="second">
+                                    <div class="number">0</div>
+                                </div>
+                            </div>
+                            <div class="tick">:</div>
+                            <div class="minutes">
+                                <div class="first">
+                                    <div class="number">0</div>
+                                </div>
+                                <div class="second">
+                                    <div class="number">0</div>
+                                </div>
+                            </div>
+                            <div class="tick">:</div>
+                            <div class="seconds">
+                                <div class="first">
+                                    <div class="number">0</div>
+                                </div>
+                                <div class="second infinite">
+                                    <div class="number">0</div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="col-sm-5"></div>
+            </div>
+        </div>
+        <!-- Body -->
+        <div class="my-body">
+            <div class="exam-problem">
+                <div class="exam-question">
+                    <h6>Choose the best word to complete the sentence.</h6>
+                    <p class="font-italic">(Chọn đáp án đúng nhất.)</p>
+                </div>
+                <ul class="list-group font-normal font-weight-bold custom-control custom-radio">
+                    <li class="list-group-item choice">
+                        <label class="radio-container font-normal">I am a cup
+                            <input type="radio" checked="checked" name="radio">
+                            <span class="checkmark"></span>
+                        </label>
+                    </li>
+                    <li class="list-group-item choice">
+                        <label class="radio-container font-normal">I am a boy
+                            <input type="radio" name="radio">
+                            <span class="checkmark"></span>
+                        </label>
+                    </li>
+                    <li class="list-group-item choice">
+                        <label class="radio-container font-normal">I a boy
+                            <input type="radio" name="radio">
+                            <span class="checkmark"></span>
+                        </label>
+                    </li>
+                    <li class="list-group-item choice">
+                        <label class="radio-container font-normal">I'm very a boy
+                            <input type="radio" name="radio">
+                            <span class="checkmark"></span>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <img src="./image/teacher1.png" alt="teacher" width="100px" height="100px">
+            </div>
+        </div>
+        <!-- Footer -->
+        <div class="my-footer">
+            <div id="my-progress" class="progress progress-wrapper">
+                <div id="my-progress-bar" class="progress-bar progress-proceed"></div>
+                <span id="my-progress-tooltip-box" class="tooltip-box">
+                    <div id="my-progress-tooltip" class="tooltip-text font-weight-bold"></div>
+                </span>
+            </div>
+
+            <div class="nav-btn-group">
+                <button type="button" class="btn nav-btn font-small font-weight-bold">
+                    <a href="#"><em class="fas fa-arrow-left"
+                            style="margin-right: 20px;margin-left: 0px;"></em>Previous</a>
+                </button>
+                <button type=" button" class="btn nav-btn font-small font-weight-bold" id="btnNext">
+                    <a href="#">Next<em class="fas fa-arrow-right"
+                            style="margin-left: 30px; margin-right: 0px;"></em></a>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="./js/exam.js"></script>
+</body>
+
+</html>

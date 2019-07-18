@@ -1,0 +1,92 @@
+p {
+    margin-bottom: 0px;
+}
+
+fieldset {
+    text-align: center;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #dbac69;
+    border-image: initial;
+    border-radius: 5px;
+}
+
+legend {
+    color: #999999;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: inherit;
+}
+
+.my-header {
+    margin-top: 26px;
+    padding-left: 36px;
+    padding-right: 36px;
+}
+
+.my-body {
+    margin: auto;
+    padding-left: 36px;
+    padding-right: 36px;
+    min-height: 450px;
+}
+
+.my-footer {
+    text-align: center;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.nav-btn {
+    margin-top: 36px;
+    padding-left: 4px;
+    padding-right: 4px;
+    background-color: #e5e5e5;
+    border: 3px solid #c4c4c4;
+    border-radius: 10px;
+    width: 35%;
+    height: 20%;
+}
+
+.nav-btn:hover {
+    border-color: #5cad2a;
+    background-color: #68c52e;
+}
+
+.nav-btn>a {
+    color: #999999;
+}
+
+.nav-btn:hover a {
+    color: white;
+}
+
+.nav-btn>a:hover {
+    text-decoration: none;
+}
+
+.count-clock {
+    margin-right: 16px;
+    margin-left: 16px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+.font-small {
+    font-size: 12px;
+}
+
+.font-normal {
+    font-size: 14px;
+}
+
+.color-yellow {
+    color: #dbac69!important;
+}
+
+#imgLogo {
+    padding-left: 4px;
+    padding-right: 20px;
+    border-right: 3px solid #e5e5e5;
+    margin-right: 16px;
+}

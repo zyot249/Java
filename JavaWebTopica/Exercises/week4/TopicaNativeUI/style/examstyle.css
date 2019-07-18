@@ -1,0 +1,251 @@
+p {
+    margin-bottom: 0px;
+}
+
+h6 {
+    margin-bottom: 0px;
+}
+
+fieldset {
+    text-align: center;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #dbac69;
+    border-image: initial;
+    border-radius: 5px;
+}
+
+legend {
+    color: #999999;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: inherit;
+}
+
+.list-group-item {
+    margin-bottom: 16px;
+    border: 3px solid #e5e5e5;
+    border-top-right-radius: 10px!important;
+    border-top-left-radius: 10px!important;
+    border-bottom-left-radius: 10px!important;
+    border-bottom-right-radius: 10px!important;
+}
+
+.my-header {
+    margin-top: 26px;
+    padding-left: 36px;
+    padding-right: 36px;
+}
+
+.my-body {
+    margin-top: 26px;
+    padding-left: 36px;
+    padding-right: 36px;
+    min-height: 450px;
+}
+
+.my-footer {
+    min-height: 100px;
+    text-align: center;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.exam-problem {
+    width: 40%;
+    margin: auto;
+}
+
+.exam-question {
+    width: 70%;
+    margin: auto;
+    margin-bottom: 36px;
+}
+
+.nav-btn {
+    padding-left: 4px;
+    padding-right: 4px;
+    background-color: #e5e5e5;
+    border: 3px solid #c4c4c4;
+    border-radius: 10px;
+    width: 9%;
+    height: 20%;
+}
+
+.nav-btn:hover {
+    border-color: #5cad2a;
+    background-color: #68c52e;
+}
+
+.nav-btn>a {
+    color: #999999;
+}
+
+.nav-btn:hover a {
+    color: white;
+}
+
+.nav-btn>a:hover {
+    text-decoration: none;
+}
+
+.nav-btn-group {
+    margin-top: 16px;
+}
+
+.count-clock {
+    margin-right: 16px;
+    margin-left: 16px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+/* radio button */
+
+/* The container */
+
+.radio-container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+
+.radio-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #e5e5e5;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+
+.radio-container:hover input~.checkmark {
+    background-color: #ffffff;
+}
+
+/* When the radio button is checked, add a blue background */
+
+.radio-container input:checked~.checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+
+label {
+    margin-bottom: 0;
+}
+
+/* Show the indicator (dot/circle) when checked */
+
+.radio-container input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+
+.radio-container .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+/* progress bar */
+
+.progress {
+    overflow: visible;
+}
+
+.progress-wrapper {
+    width: 100%;
+    height: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.progress-wrapper .tooltip-box {
+    background: #dbac69;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    display: table;
+    transition: .6s ease;
+    margin-left: 0px;
+}
+
+.progress-wrapper .tooltip-box::after {
+    content: " ";
+    position: absolute;
+    top: 98%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #dbac69 transparent transparent transparent;
+}
+
+.tooltip-text {
+    color: white;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.progress-proceed {
+    background-color: #dbac69;
+    width: 0px;
+    height: 10px;
+}
+
+/* font */
+
+.font-small {
+    font-size: 12px;
+}
+
+.font-normal {
+    font-size: 14px;
+}
+
+.color-white {
+    color: white;
+}
+
+.color-yellow {
+    color: #dbac69!important;
+}
+
+#imgLogo {
+    padding-left: 4px;
+    padding-right: 20px;
+    border-right: 3px solid #e5e5e5;
+    margin-right: 16px;
+}
+
+#btnNext {
+    margin-left: 20px;
+}

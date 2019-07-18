@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Topica Native">
+    <meta name="author" content="Shyn">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./style/loginstyle.css" />
+</head>
+
+<body>
+    <div class="my-container">
+        <div class="form-main">
+            <h3 class="font-main">Login TOPICA NATIVE SYSTEM</h3>
+        </div>
+        <form id="form-login">
+            <div class="form-group">
+                <input type="text" class="form-control text-input" id="input-username" placeholder="username">
+                <div class="form-error">
+                    <small id="error-username"></small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="password" class="form-control text-input" placeholder="password">
+            </div>
+            <input class="btn btn-primary btn-block" id="btn-login" type="submit" value="Login">
+        </form>
+        <div>
+            <div>
+                <small>You haven't an account yet?</small>
+            </div>
+            <input class="btn btn-success btn-block" id="btn-register" type="submit" value="Register">
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+
+</html>

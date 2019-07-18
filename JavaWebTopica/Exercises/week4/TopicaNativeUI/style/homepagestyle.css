@@ -1,0 +1,162 @@
+p {
+    margin-bottom: 0px;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.card-footer {
+    padding: 0;
+    border-width: 3px;
+}
+
+.card-body {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 26px;
+    padding-top: 10px;
+}
+
+.my-cities {
+    column-count: 2;
+}
+
+.btn:focus {
+    box-shadow: 0 0 0 0!important;
+}
+
+.grid-item:hover {
+    box-shadow: 5px 10px 12px #888888!important;
+}
+
+.grid-item:hover .card-footer {
+    border-color: #dbac69;
+}
+
+.my-navtab:focus, .my-navtab>.font-navtab:focus {
+    border-bottom: 2px solid #dbac69!important;
+    color: #dbac69!important;
+}
+
+.my-container {
+    /* position: relative; */
+    min-height: 100vh;
+}
+
+.item-body-dialog {
+    margin-left: 60px;
+}
+
+.content-frame {
+    padding-left: 180px;
+    padding-right: 180px;
+}
+
+.footer {
+    width: 100%;
+    padding-top: 10px!important;
+    padding-bottom: 10px!important;
+}
+
+.modal-body {
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
+.info-bar {
+    background-color: black;
+    overflow: auto;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    width: 100%;
+}
+
+.nav-link {
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+}
+
+.my-navtab {
+    margin-left: 12px;
+    margin-right: 12px;
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+}
+
+.list-group-item {
+    border-top: 3px solid #e5e5e500!important;
+    border-left: 3px solid #e5e5e500!important;
+    border-bottom: 3px solid #e5e5e500!important;
+    border-right: 3px solid #e5e5e500!important;
+    border-radius: 5px!important;
+    color: black;
+}
+
+.list-group-item:focus, .list-group-item:hover {
+    border-color: #e5e5e5!important;
+    color: #495057;
+    text-decoration: none;
+}
+
+.arrow-in-dialog {
+    color: #d8d8d8;
+}
+
+.list-group-item:hover .arrow-in-dialog {
+    color: #dbac69!important;
+}
+
+.content-list {
+    margin-top: 16px;
+    min-height: 600px!important;
+}
+
+.btn-study {
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+}
+
+.color-yellow {
+    color: #dbac69!important;
+}
+
+.font-small {
+    font-size: 10px;
+}
+
+.font-navtab {
+    font-size: 12px;
+}
+
+.font-normal {
+    font-size: 16px;
+}
+
+#img-codo {
+    border-radius: 4px;
+}
+
+#hotline {
+    float: left;
+}
+
+#user-info {
+    float: right;
+}
+
+#username {
+    margin-left: 26px;
+}
+
+#home-navbar {
+    color: white;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    background-color: #252525;
+}
+
+#collapsibleNavbar {
+    margin-left: 70px;
+}
