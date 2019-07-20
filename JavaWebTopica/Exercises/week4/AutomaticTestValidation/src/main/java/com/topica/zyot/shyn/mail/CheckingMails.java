@@ -4,33 +4,21 @@ import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 public class CheckingMails {
-    private static Logger logger;
+    private static Logger logger = Logger.getLogger(CheckingMails.class.getSimpleName());
+    private static final Set<String> wrongFormatAddresses = new HashSet<>();
+    private static final Set<String> zipFilePaths = new HashSet<>();
 
-    public static void check(String host, String storeType, String user, String password) {
+    public static void checkMail(String host, String user, String password) {
         try {
-            //create properties field
-            Properties properties = new Properties();
-
-            properties.put("mail.store.protocol", "imaps");
-            properties.put("mail.imap.host", host);
-            properties.put("mail.imap.port", "993");
-            properties.put("mail.imap.starttls.enable", "true");
-            Session emailSession = Session.getDefaultInstance(properties);
-
-            //create the POP3 store object and connect with the pop server
-            Store store = emailSession.getStore("imaps");
-
-            store.connect(host, user, password);
-
+            Store store = connect(host, user, password);
             //create the folder object and open it
             Folder emailFolder = store.getFolder("INBOX");
             emailFolder.open(Folder.READ_ONLY);
@@ -38,12 +26,13 @@ public class CheckingMails {
             // retrieve the messages from the folder in an array and print it
             Message[] messages = emailFolder.getMessages();
             logger.log(Level.INFO, "messages.length : {0}", messages.length);
-
+            boolean isWrongMail;
             for (int i = 0, n = messages.length; i < n; i++) {
                 Message message = messages[i];
                 String mailSubject = message.getSubject();
                 // get mail whose subject starts with "ITLAB-HOMEWORK"
                 if (Pattern.matches("ITLAB-HOMEWORK.*", mailSubject)) {
+                    isWrongMail = true;
                     // get address
                     Address[] addresses = message.getFrom();
                     String address = addresses == null ? null : ((InternetAddress) addresses[0]).getAddress();
@@ -63,53 +52,124 @@ public class CheckingMails {
                             System.out.println("part " + (k + 1) + " doesn't have attachment");
                         } else {
                             System.out.println("part " + (k + 1) + " has attachments");
-                            getAttachment(address, bodyPart);
+                            String fileName = bodyPart.getFileName();
+                            String fileExtension = fileName.substring(fileName.lastIndexOf('.'));
+                            if (fileExtension.equalsIgnoreCase(".zip")) {
+                                isWrongMail = false;
+                                boolean success = getAttachment(address, bodyPart);
+                                if (success) {
+                                    // TODO: set read flag
+                                } else {
+                                    // TODO: set unread flag
+                                }
+                            } else {
+                                addWrongFormatAddress(address);
+                            }
                         }
                     }
+                    if (isWrongMail) {
+                        addWrongFormatAddress(address);
+                    }
                 }
-
             }
-
             //close the store and folder objects
             emailFolder.close(false);
             store.close();
 
-        } catch (NoSuchProviderException e) {
-            e.printStackTrace();
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
+        } catch (MessagingException | IOException e) {
             e.printStackTrace();
         }
     }
 
-    private static void getAttachment(String address, BodyPart bodyPart) throws Exception {
-        String fileName = bodyPart.getFileName();
-        String fileExtension = fileName.substring(fileName.lastIndexOf('.'));
-        if (fileExtension.equalsIgnoreCase(".zip")) {
+    private static Store connect(String host, String user, String password)
+            throws MessagingException {
+        final String PROTOCOL = "imaps";
+        // config properties
+        Properties properties = new Properties();
+
+        properties.put("mail.store.protocol", PROTOCOL);
+        properties.put("mail.imap.host", host);
+        properties.put("mail.imap.port", "993");
+        properties.put("mail.imap.starttls.enable", "true");
+        Session emailSession = Session.getDefaultInstance(properties);
+
+        //create the POP3 store object and connect with the pop server
+        Store store = emailSession.getStore(PROTOCOL);
+        // connect
+        store.connect(host, user, password);
+        return store;
+    }
+
+    private static boolean getAttachment(String address, BodyPart bodyPart) {
+        boolean success = true;
+        try {
+            String fileName = bodyPart.getFileName();
             logger.log(Level.INFO, "Find a file: " + fileName);
             InputStream is = bodyPart.getInputStream();
-            File f = new File("output/" + address + "-" + fileName);
+            String outputFilePath = "output/" + address + "-" + fileName;
+            File f = new File(outputFilePath);
             FileOutputStream fos = new FileOutputStream(f);
-            byte[] buf = new byte[64 * 1024];
-            int bytesRead;
-            while ((bytesRead = is.read(buf)) != -1) {
-                fos.write(buf, 0, bytesRead);
-            }
+            readFile(is, fos);
             fos.close();
-        } else {
-            System.out.println("Attachment isn't a zip file");
+            addZipFilePath(outputFilePath);
+        } catch (IOException | MessagingException e) {
+            e.printStackTrace();
+            success = false;
+        }
+        return success;
+    }
+
+    private static void readFile(InputStream is, FileOutputStream fos) throws IOException {
+        byte[] buf = new byte[64 * 1024];
+        int bytesRead;
+        while ((bytesRead = is.read(buf)) != -1) {
+            fos.write(buf, 0, bytesRead);
+        }
+    }
+
+    private static void addWrongFormatAddress(String address) {
+        synchronized (wrongFormatAddresses) {
+            wrongFormatAddresses.add(address);
+        }
+    }
+
+    public static Set<String> getAllWrongFormatAddresses() {
+        synchronized (wrongFormatAddresses) {
+            if (wrongFormatAddresses.isEmpty())
+                return Collections.emptySet();
+            else {
+                HashSet<String> wrongAddresses = new HashSet<>(wrongFormatAddresses);
+                wrongFormatAddresses.clear();
+                return wrongAddresses;
+            }
+        }
+    }
+
+    private static void addZipFilePath(String filePath) {
+        synchronized (zipFilePaths) {
+            zipFilePaths.add(filePath);
+        }
+    }
+
+    public static Set<String> getAllZipFilePaths() {
+        synchronized (zipFilePaths) {
+            if (zipFilePaths.isEmpty())
+                return Collections.emptySet();
+            else {
+                HashSet<String> paths = new HashSet<>(zipFilePaths);
+                zipFilePaths.clear();
+                return paths;
+            }
         }
     }
 
     public static void main(String[] args) {
         logger = Logger.getLogger(CheckingMails.class.getSimpleName());
         String host = "imap.gmail.com";// change accordingly
-        String mailStoreType = "imap";
         String username = "dungnd240998@gmail.com";// change accordingly
         String pasword = "conkuncon249";// change accordingly
 
-        check(host, mailStoreType, username, pasword);
+        checkMail(host, username, pasword);
 
     }
 }

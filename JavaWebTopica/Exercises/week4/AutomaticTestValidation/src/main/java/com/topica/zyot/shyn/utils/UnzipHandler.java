@@ -1,4 +1,4 @@
-package com.topica.zyot.shyn;
+package com.topica.zyot.shyn.utils;
 
 import java.io.*;
 import java.util.zip.ZipEntry;
@@ -6,16 +6,13 @@ import java.util.zip.ZipInputStream;
 
 public class UnzipHandler {
     private static final int BUFFER = 2048;
-    private static final String INPUT_ZIP_FILE = "output/windnd249@gmail.com-CV-Nguyen-Duc-Dung.zip";
-    private static final String OUTPUT_FOLDER = "UnzipOutput/CV";
 
     public static void main(String[] args) {
-        final String SOURCE_ZIPDIR = "output/windnd249@gmail.com-CV-Nguyen-Duc-Dung.zip";
+        final String sourceZipdir = "output/windnd249@gmail.com-CV-Nguyen-Duc-Dung.zip";
         // creating the destination dir using the zip file path
         // by truncating the ".zip" part
-        String DESTINATION_DIR = SOURCE_ZIPDIR.substring(0, SOURCE_ZIPDIR.lastIndexOf('.'));
-        //System.out.println("" + DESTINATION_DIR);
-        extract(SOURCE_ZIPDIR, DESTINATION_DIR);
+        String destinationDir = sourceZipdir.substring(0, sourceZipdir.lastIndexOf('.'));
+        extract(sourceZipdir, destinationDir);
     }
 
     public static void extract(String source, String dest) {
@@ -24,7 +21,6 @@ public class UnzipHandler {
             if (!root.exists()) {
                 root.mkdir();
             }
-            BufferedOutputStream bos = null;
             // zipped input
             FileInputStream fis = new FileInputStream(source);
             ZipInputStream zis = new ZipInputStream(new BufferedInputStream(fis));
@@ -52,7 +48,7 @@ public class UnzipHandler {
         FileOutputStream fos = new FileOutputStream(file);
         BufferedOutputStream bos = new BufferedOutputStream(fos, BUFFER);
         int len;
-        byte data[] = new byte[BUFFER];
+        byte[] data = new byte[BUFFER];
         while ((len = zis.read(data, 0, BUFFER)) != -1) {
             bos.write(data, 0, len);
         }
