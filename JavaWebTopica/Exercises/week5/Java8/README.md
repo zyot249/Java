@@ -1,14 +1,14 @@
-# `Problem with old date and time`:
-#### - Java Date Time classes are not defined consistently, we have Date Class in both java.util as well as java.sql packages. Again formatting and parsing classes are defined in java.text package.
-#### - java.util.Date contains both date and time, whereas java.sql.Date contains only date. Having this in java.sql package doesn’t make sense. Also both the classes have same name, that is a very bad design itself.
-#### - There are no clearly defined classes for time, timestamp, formatting and parsing. We have java.text.DateFormat abstract class for parsing and formatting need. Usually SimpleDateFormat class is used for parsing and formatting.
-#### - All the Date classes are mutable, so they are not thread safe. It’s one of the biggest problem with Java Date and Calendar classes.
-#### - Date class doesn’t provide internationalization, there is no timezone support. So java.util.Calendar and java.util.TimeZone classes were introduced, but they also have all the problems listed above.
+# `Vấn đề của date và time API cũ`:
+#### - Các lớp Java Date Time không được định nghĩa thống nhất, chúng ta có lớp Date trong cả java.util cũng như là java.sql packages. Các lớp formatting và parsing lại được định nghĩa trong java.text package.
+#### - java.util.Date bao gồm cả date và time, trong khi đó java.sql.Date chỉ có date. Việc chỉ có date trong java.sql package là không hợp lý. Hơn nữa là chúng lại có cùng tên và thiết kế của chúng cũng rất tệ.
+#### - Chưa có những lớp được định nghĩa rõ ràng cho time, timestamp, formatting and parsing. Chúng ta có lớp trừu tượng java.text.DateFormat để parsing và formatting khi cần nhưng lại thường xuyên dùng lớp SimpleDateFormat.
+#### - Tất cả các lớp Date là dễ thay đổi, vì thế chúng không an toàn trong đa luồng. Đó thực sự là 1 vấn đề rất lớp đối với các lớp Java Date và Java Calendar.
+#### - Lớp Date chưa cung cấp sự quốc tế hóa, cụ thể là nó không hỗ trợ timezone. Do đó mà Java Calendar và Java Timezone được ra đời nhưng chúng vẫn tồn tại các vấn đề trên.
 
-# `new Date Time API`:
-#### - Immutability: All the classes in the new Date Time API are immutable and good for multithreaded environments.
-#### - Separation of Concerns: The new API separates clearly between human readable date time and machine time (unix timestamp). It defines separate classes for Date, Time, DateTime, Timestamp, Timezone etc.
-#### - Clarity: The methods are clearly defined and perform the same action in all the classes. For example, to get the current instance we have now() method. There are format() and parse() methods defined in all these classes rather than having a separate class for them.
-#### - All the classes use Factory Pattern and Strategy Pattern for better handling. Once you have used the methods in one of the class, working with other classes won’t be hard.
+# `Date Time API mới`:
+#### - Tính bất biến: Tất cả các lớp trong Date Time API mới đều là không thay đổi được và an toàn trong môi trường đa luồng.
+#### - Phân chia sự liên quan: APT mới phân chia rõ ràng giữa date time cho người và cho máy(unix timestamp). Nó định nghĩa các lớp cụ thể cho Date, Time, DateTime, Timestamp, Timezone, ....
+#### - Sự rõ ràng: Các phương thức được định nghĩa rõ ràng và thực hiện các hoạt động chung trong tất cả các lớp. Ví dụ, để lấy thực thể hiện tại chúng ta dùng phương thức now(): LocalDate.now(), LocalTime.now(), .... Có phương thức format và parse cho từng lớp.
+#### - Tất cả các lớp đều sử dụng Factory Pattern và Strategy Pattern để xử lý tốt hơn. Một khi bạn có các phương thức trong mô hình của một lớp, thao tác với các lớp khác sẽ không còn khó khăn.
 #### - Utility operations: All the new Date Time API classes comes with methods to perform common tasks, such as plus, minus, format, parsing, getting separate part in date/time etc.
-#### - Extendable: The new Date Time API works on ISO-8601 calendar system but we can use it with other non ISO calendars as well.
+#### - Khả năng mở rộng: Date Time API mới làm việc trên ISO-8601 hệ thống lịch nhưng chúng ta hoàn toàn có thể sử dụng chúng với các hệ thống lịch tiêu chuẩn khác.
