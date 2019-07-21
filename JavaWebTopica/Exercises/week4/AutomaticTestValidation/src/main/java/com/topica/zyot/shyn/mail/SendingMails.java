@@ -1,11 +1,15 @@
 package com.topica.zyot.shyn.mail;
 
+import org.apache.log4j.Logger;
+
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
 public class SendingMails {
+    private static final Logger logger = Logger.getLogger(SendingMails.class);
+
     private SendingMails() {
 
     }
@@ -46,9 +50,9 @@ public class SendingMails {
             // Send message
             Transport.send(message);
 
-            System.out.println("Sent message successfully....");
+            logger.info("Sent message successfully.... to " + to);
         } catch (MessagingException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage());
         }
     }
 }

@@ -1,5 +1,7 @@
 package com.topica.zyot.shyn.problem;
 
+import org.apache.log4j.Logger;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -7,6 +9,7 @@ import java.io.InputStreamReader;
 import java.util.concurrent.Callable;
 
 public class CodeExecutionWorker implements Callable<Integer> {
+    private static final Logger logger = Logger.getLogger(CodeExecutionWorker.class);
     private String filePath; // path of java file
     private String classPath;
 
@@ -30,7 +33,7 @@ public class CodeExecutionWorker implements Callable<Integer> {
                     score++;
             }
         } catch (IOException | InterruptedException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage());
             return -1;
         } finally {
             Thread.currentThread().interrupt();

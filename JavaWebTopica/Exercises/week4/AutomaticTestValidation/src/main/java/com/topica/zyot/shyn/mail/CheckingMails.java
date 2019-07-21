@@ -1,5 +1,7 @@
 package com.topica.zyot.shyn.mail;
 
+import org.apache.log4j.Logger;
+
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import java.io.File;
@@ -7,14 +9,16 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
 public class CheckingMails {
-    private static Logger logger = Logger.getLogger(CheckingMails.class.getSimpleName());
+    private static final Logger logger = Logger.getLogger(CheckingMails.class);
     private static final Set<String> wrongFormatAddresses = new HashSet<>();
     private static final Map<String, Set<String>> zipFilePathsOfStudents = new HashMap<>();
+
+    private CheckingMails() {
+
+    }
 
     public static void checkMail(String host, String user, String password) {
         try {
@@ -25,60 +29,66 @@ public class CheckingMails {
 
             // retrieve the messages from the folder in an array and print it
             Message[] messages = emailFolder.getMessages();
-            logger.log(Level.INFO, "messages.length : {0}", messages.length);
-            boolean isWrongMail;
+            logger.info("The number of messages : " + messages.length);
             for (int i = 0, n = messages.length; i < n; i++) {
                 Message message = messages[i];
                 String mailSubject = message.getSubject();
                 // get mail whose subject starts with "ITLAB-HOMEWORK"
                 if (Pattern.matches("ITLAB-HOMEWORK.*", mailSubject)) {
-                    isWrongMail = true;
-                    // get address
-                    Address[] addresses = message.getFrom();
-                    String address = addresses == null ? null : ((InternetAddress) addresses[0]).getAddress();
-                    System.out.println("---------------------------------");
-                    System.out.println("Email Number " + (i + 1));
-                    System.out.println("Subject: " + message.getSubject());
-                    System.out.println("From: " + address);
-                    System.out.println("Text: " + message.getContentType());
-
-                    // Iterate multiparts
-                    // get attachments
-                    Multipart multipart = (Multipart) message.getContent();
-                    System.out.println("parts: " + multipart.getCount());
-                    for (int k = 0; k < multipart.getCount(); k++) {
-                        BodyPart bodyPart = multipart.getBodyPart(k);
-                        if (!Part.ATTACHMENT.equalsIgnoreCase(bodyPart.getDisposition())) {
-                            System.out.println("part " + (k + 1) + " doesn't have attachment");
-                        } else {
-                            System.out.println("part " + (k + 1) + " has attachments");
-                            String fileName = bodyPart.getFileName();
-                            String fileExtension = fileName.substring(fileName.lastIndexOf('.'));
-                            if (fileExtension.equalsIgnoreCase(".zip")) {
-                                isWrongMail = false;
-                                boolean success = getAttachment(address, bodyPart);
-                                if (success) {
-                                    // TODO: set read flag
-                                } else {
-                                    // TODO: set unread flag
-                                }
-                            } else {
-                                addWrongFormatAddress(address);
-                            }
-                        }
-                    }
-                    if (isWrongMail) {
-                        addWrongFormatAddress(address);
-                    }
+                    checkContentOfMessages(message, i);
                 }
             }
             //close the store and folder objects
             emailFolder.close(false);
             store.close();
-
         } catch (MessagingException | IOException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage());
         }
+    }
+
+    private static void checkContentOfMessages(Message message, int i) throws IOException, MessagingException {
+        boolean isWrongMail = true;
+        // get address
+        Address[] addresses = message.getFrom();
+        String address = addresses == null ? null : ((InternetAddress) addresses[0]).getAddress();
+        logInfoOfMessage(message, address, i);
+
+        // Iterate multiparts
+        // get attachments
+        Multipart multipart = (Multipart) message.getContent();
+        logger.info("parts: " + multipart.getCount());
+        for (int k = 0; k < multipart.getCount(); k++) {
+            BodyPart bodyPart = multipart.getBodyPart(k);
+            if (!Part.ATTACHMENT.equalsIgnoreCase(bodyPart.getDisposition())) {
+                logger.info("part " + (k + 1) + " doesn't have attachment");
+            } else {
+                logger.info("part " + (k + 1) + " has attachments");
+                String fileName = bodyPart.getFileName();
+                String fileExtension = fileName.substring(fileName.lastIndexOf('.'));
+                if (fileExtension.equalsIgnoreCase(".zip")) {
+                    isWrongMail = false;
+                    boolean success = getAttachment(address, bodyPart);
+                    if (success) {
+                        // TODO: set read flag
+                    } else {
+                        // TODO: set unread flag
+                    }
+                } else {
+                    addWrongFormatAddress(address);
+                }
+            }
+        }
+        if (isWrongMail) {
+            addWrongFormatAddress(address);
+        }
+    }
+
+    private static void logInfoOfMessage(Message message, String address, int i) throws MessagingException {
+        logger.info("---------------------------------");
+        logger.info("Email Number " + (i + 1));
+        logger.info("Subject: " + message.getSubject());
+        logger.info("From: " + address);
+        logger.info("Text: " + message.getContentType());
     }
 
     private static Store connect(String host, String user, String password)
@@ -104,7 +114,7 @@ public class CheckingMails {
         boolean success = true;
         try {
             String fileName = bodyPart.getFileName();
-            logger.log(Level.INFO, "Find a file: " + fileName);
+            logger.info("Find a file: " + fileName);
             InputStream is = bodyPart.getInputStream();
             String outputFilePath = "output/" + address + "-" + fileName;
             File f = new File(outputFilePath);
@@ -113,7 +123,7 @@ public class CheckingMails {
             fos.close();
             addZipFilePath(address, outputFilePath);
         } catch (IOException | MessagingException e) {
-            e.printStackTrace();
+            logger.error(e.getMessage());
             success = false;
         }
         return success;
