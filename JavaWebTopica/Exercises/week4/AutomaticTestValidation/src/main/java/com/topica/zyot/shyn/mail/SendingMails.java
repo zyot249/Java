@@ -14,10 +14,10 @@ public class SendingMails {
         String from = "dungnd240998@gmail.com";
         final String username = "dungnd240998@gmail.com";//change accordingly
         final String password = "conkuncon249";//change accordingly
-        sendEmail(from,password,to);
+//        sendEmail(from, password, to);
     }
 
-    public static void sendEmail(String username, String password, String to) {
+    public static void sendEmail(String username, String password, String to, String subject, String content) {
         String host = "smtp.gmail.com";
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
@@ -45,11 +45,10 @@ public class SendingMails {
             message.addRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
 
             // Set Subject: header field
-            message.setSubject("Testing Subject");
+            message.setSubject(subject);
 
             // Now set the actual message
-            message.setText("Hello, this is sample for to check send " +
-                    "email using JavaMailAPI ");
+            message.setText(content);
 
             // Send message
             Transport.send(message);

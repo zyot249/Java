@@ -4,8 +4,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.concurrent.Callable;
 
-public class CodeExecutionWorker extends Thread {
+public class CodeExecutionWorker implements Callable<Integer> {
     private String filePath; // path of java file
     private String classPath;
 
@@ -15,7 +16,7 @@ public class CodeExecutionWorker extends Thread {
     }
 
     @Override
-    public void run() {
+    public Integer call() {
         // init test cases
         int[] inputs = new int[]{0, 1, 2, 3, 5, 6, 7, 8, 9, 13};
         int[] result = new int[]{-1, 31, 28, 31, 31, 30, 31, 31, 30, -1};
@@ -28,12 +29,13 @@ public class CodeExecutionWorker extends Thread {
                 if (testCode(inputs[i], result[i]))
                     score++;
             }
-            System.out.println("Score: " + score);
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
+            return -1;
         } finally {
             Thread.currentThread().interrupt();
         }
+        return score;
     }
 
     private boolean testCode(int input, int result) throws IOException, InterruptedException {

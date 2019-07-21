@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 public class CheckingMails {
     private static Logger logger = Logger.getLogger(CheckingMails.class.getSimpleName());
     private static final Set<String> wrongFormatAddresses = new HashSet<>();
-    private static final Set<String> zipFilePaths = new HashSet<>();
+    private static final Map<String, Set<String>> zipFilePathsOfStudents = new HashMap<>();
 
     public static void checkMail(String host, String user, String password) {
         try {
@@ -111,7 +111,7 @@ public class CheckingMails {
             FileOutputStream fos = new FileOutputStream(f);
             readFile(is, fos);
             fos.close();
-            addZipFilePath(outputFilePath);
+            addZipFilePath(address, outputFilePath);
         } catch (IOException | MessagingException e) {
             e.printStackTrace();
             success = false;
@@ -145,23 +145,32 @@ public class CheckingMails {
         }
     }
 
-    private static void addZipFilePath(String filePath) {
-        synchronized (zipFilePaths) {
-            zipFilePaths.add(filePath);
+    private static void addZipFilePath(String address, String filePath) {
+        synchronized (zipFilePathsOfStudents) {
+            Set<String> paths = zipFilePathsOfStudents.get(address);
+            if (paths == null) {
+                paths = new HashSet<>();
+                paths.add(filePath);
+                zipFilePathsOfStudents.put(address, paths);
+            } else {
+                paths.add(filePath);
+                zipFilePathsOfStudents.replace(address, paths);
+            }
         }
     }
 
-    public static Set<String> getAllZipFilePaths() {
-        synchronized (zipFilePaths) {
-            if (zipFilePaths.isEmpty())
-                return Collections.emptySet();
+    public static Map<String, Set<String>> getAllZipFilePaths() {
+        synchronized (zipFilePathsOfStudents) {
+            if (zipFilePathsOfStudents.isEmpty())
+                return Collections.emptyMap();
             else {
-                HashSet<String> paths = new HashSet<>(zipFilePaths);
-                zipFilePaths.clear();
+                HashMap<String, Set<String>> paths = new HashMap<>(zipFilePathsOfStudents);
+                zipFilePathsOfStudents.clear();
                 return paths;
             }
         }
     }
+
 
     public static void main(String[] args) {
         logger = Logger.getLogger(CheckingMails.class.getSimpleName());
