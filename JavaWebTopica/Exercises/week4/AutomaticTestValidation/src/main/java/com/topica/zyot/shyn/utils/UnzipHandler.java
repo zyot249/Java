@@ -9,14 +9,6 @@ public class UnzipHandler {
     private static final int BUFFER = 2048;
     private static final HashMap<String, Set<String>> fileJavaOfStudent = new HashMap<>();
 
-    public static void main(String[] args) {
-        final String sourceZipdir = "output/windnd249@gmail.com-CV-Nguyen-Duc-Dung.zip";
-        // creating the destination dir using the zip file path
-        // by truncating the ".zip" part
-        String destinationDir = sourceZipdir.substring(0, sourceZipdir.lastIndexOf('.'));
-        extract("windnd249@gmail.com", sourceZipdir, destinationDir);
-    }
-
     private static void addFileJavaOfStudent(String address, String filePath) {
         synchronized (fileJavaOfStudent) {
             Set<String> paths = fileJavaOfStudent.get(address);

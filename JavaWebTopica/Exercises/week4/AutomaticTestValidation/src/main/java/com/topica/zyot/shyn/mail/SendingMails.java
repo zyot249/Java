@@ -6,15 +6,8 @@ import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
 public class SendingMails {
-    public static void main(String[] args) {
-        // Recipient's email ID needs to be mentioned.
-        String to = "windnd249@gmail.com";
+    private SendingMails() {
 
-        // Sender's email ID needs to be mentioned
-        String from = "dungnd240998@gmail.com";
-        final String username = "dungnd240998@gmail.com";//change accordingly
-        final String password = "conkuncon249";//change accordingly
-//        sendEmail(from, password, to);
     }
 
     public static void sendEmail(String username, String password, String to, String subject, String content) {
@@ -55,7 +48,7 @@ public class SendingMails {
 
             System.out.println("Sent message successfully....");
         } catch (MessagingException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 }

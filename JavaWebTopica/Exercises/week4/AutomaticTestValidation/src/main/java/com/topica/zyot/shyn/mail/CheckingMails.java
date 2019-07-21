@@ -170,15 +170,4 @@ public class CheckingMails {
             }
         }
     }
-
-
-    public static void main(String[] args) {
-        logger = Logger.getLogger(CheckingMails.class.getSimpleName());
-        String host = "imap.gmail.com";// change accordingly
-        String username = "dungnd240998@gmail.com";// change accordingly
-        String pasword = "conkuncon249";// change accordingly
-
-        checkMail(host, username, pasword);
-
-    }
 }
