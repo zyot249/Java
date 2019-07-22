@@ -18,6 +18,8 @@ public class App {
     private static final String HOST = "imap.gmail.com";// change accordingly
     private static final String EMAIL_USERNAME = "dungnd240998@gmail.com";// change accordingly
     private static final String EMAIL_PASWORD = "conkuncon249";// change accordingly
+    private static final String TITLE_HOMEWORK_RESULT = "ITLAB-HOMEWORK-RESULT";
+    private static final String TITLE_HOMEWORK_WORNG_FORMAT = "ITLAB-HOMEWORK-WRONG-FORMAT";
 
     public static void main(String[] args) {
         Map<String, Integer> scores = new HashMap<>();
@@ -27,14 +29,14 @@ public class App {
         if (!scores.isEmpty()) {
             scores.forEach((address, score) -> {
                 String content = "Your score is: " + score;
-                SendingMails.sendEmail(EMAIL_USERNAME, EMAIL_PASWORD, address, "ITLAB-HOMEWORK-RESULT", content);
+                SendingMails.sendEmail(EMAIL_USERNAME, EMAIL_PASWORD, address, TITLE_HOMEWORK_RESULT, content);
             });
         }
         // send fail
         Set<String> wrongAddresses = CheckingMails.getAllWrongFormatAddresses();
         wrongAddresses.forEach(wrongAddress -> {
             String content = "Wrong Format";
-            SendingMails.sendEmail(EMAIL_USERNAME, EMAIL_PASWORD, wrongAddress, "ITLAB-HOMEWORK-WRONG-FORMAT", content);
+            SendingMails.sendEmail(EMAIL_USERNAME, EMAIL_PASWORD, wrongAddress, TITLE_HOMEWORK_WORNG_FORMAT, content);
         });
         executorService.shutdown();
     }

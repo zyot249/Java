@@ -9,6 +9,7 @@ import java.util.Properties;
 
 public class SendingMails {
     private static final Logger logger = Logger.getLogger(SendingMails.class);
+    private static final String SMTP_TLS_PORT = "587";
 
     private SendingMails() {
 
@@ -20,7 +21,7 @@ public class SendingMails {
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.host", host);
-        props.put("mail.smtp.port", "587");
+        props.put("mail.smtp.port", SMTP_TLS_PORT);
 
         // Get the Session object.
         Session session = Session.getInstance(props,

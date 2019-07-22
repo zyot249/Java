@@ -15,6 +15,9 @@ public class CheckingMails {
     private static final Logger logger = Logger.getLogger(CheckingMails.class);
     private static final Set<String> wrongFormatAddresses = new HashSet<>();
     private static final Map<String, Set<String>> zipFilePathsOfStudents = new HashMap<>();
+    private static final String IMAP_TLS_PORT = "993";
+    private static final String ZIP_FILE_EXTENSION = ".zip";
+    private static final int BUFFER_SIZE = 64 * 1024;
 
     private CheckingMails() {
 
@@ -25,7 +28,7 @@ public class CheckingMails {
             Store store = connect(host, user, password);
             //create the folder object and open it
             Folder emailFolder = store.getFolder("INBOX");
-            emailFolder.open(Folder.READ_ONLY);
+            emailFolder.open(Folder.READ_WRITE);
 
             // retrieve the messages from the folder in an array and print it
             Message[] messages = emailFolder.getMessages();
@@ -60,18 +63,22 @@ public class CheckingMails {
         for (int k = 0; k < multipart.getCount(); k++) {
             BodyPart bodyPart = multipart.getBodyPart(k);
             if (!Part.ATTACHMENT.equalsIgnoreCase(bodyPart.getDisposition())) {
-                logger.info("part " + (k + 1) + " doesn't have attachment");
+                logger.info(new StringBuilder()
+                        .append("part ")
+                        .append(k + 1)
+                        .append(" doesn't have attachment").toString());
             } else {
-                logger.info("part " + (k + 1) + " has attachments");
+                logger.info(new StringBuilder()
+                        .append("part ")
+                        .append(k + 1)
+                        .append(" has attachments").toString());
                 String fileName = bodyPart.getFileName();
                 String fileExtension = fileName.substring(fileName.lastIndexOf('.'));
-                if (fileExtension.equalsIgnoreCase(".zip")) {
+                if (fileExtension.equalsIgnoreCase(ZIP_FILE_EXTENSION)) {
                     isWrongMail = false;
                     boolean success = getAttachment(address, bodyPart);
                     if (success) {
-                        // TODO: set read flag
-                    } else {
-                        // TODO: set unread flag
+                        message.setFlag(Flags.Flag.SEEN, true);
                     }
                 } else {
                     addWrongFormatAddress(address);
@@ -99,7 +106,7 @@ public class CheckingMails {
 
         properties.put("mail.store.protocol", PROTOCOL);
         properties.put("mail.imap.host", host);
-        properties.put("mail.imap.port", "993");
+        properties.put("mail.imap.port", IMAP_TLS_PORT);
         properties.put("mail.imap.starttls.enable", "true");
         Session emailSession = Session.getDefaultInstance(properties);
 
@@ -130,7 +137,7 @@ public class CheckingMails {
     }
 
     private static void readFile(InputStream is, FileOutputStream fos) throws IOException {
-        byte[] buf = new byte[64 * 1024];
+        byte[] buf = new byte[BUFFER_SIZE];
         int bytesRead;
         while ((bytesRead = is.read(buf)) != -1) {
             fos.write(buf, 0, bytesRead);

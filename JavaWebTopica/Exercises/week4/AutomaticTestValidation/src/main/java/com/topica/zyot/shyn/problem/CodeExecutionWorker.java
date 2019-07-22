@@ -26,7 +26,10 @@ public class CodeExecutionWorker implements Callable<Integer> {
         int score = 0;
         // compile code
         try {
-            Process codeCompiling = Runtime.getRuntime().exec("javac -cp " + classPath + " " + filePath);
+            Process codeCompiling = Runtime.getRuntime().exec(new StringBuilder()
+                    .append("javac -cp ")
+                    .append(classPath).append(" ")
+                    .append(filePath).toString());
             codeCompiling.waitFor();
             for (int i = 0; i < inputs.length; i++) {
                 if (testCode(inputs[i], result[i]))
@@ -42,8 +45,12 @@ public class CodeExecutionWorker implements Callable<Integer> {
     }
 
     private boolean testCode(int input, int result) throws IOException, InterruptedException {
-        String runFileName = filePath.substring(filePath.lastIndexOf('/') + 1, filePath.lastIndexOf('.'));
-        Process codeRunner = Runtime.getRuntime().exec("java -cp " + classPath + " " + runFileName + " " + input);
+        String runFileName = filePath.substring(filePath.lastIndexOf(File.separator) + 1, filePath.lastIndexOf('.'));
+        Process codeRunner = Runtime.getRuntime().exec(new StringBuilder()
+                .append("java -cp ")
+                .append(classPath).append(" ")
+                .append(runFileName).append(" ")
+                .append(input).toString());
         BufferedReader reader = new BufferedReader(new InputStreamReader(codeRunner.getInputStream()));
         String line = reader.readLine();
         if (line != null) {
