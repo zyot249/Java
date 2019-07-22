@@ -23,7 +23,8 @@ public class CheckingMails {
 
     }
 
-    public static void checkMail(String host, String user, String password) {
+    public static int checkMail(String host, String user, String password) {
+        int numOfNewMsg = 0;
         try {
             Store store = connect(host, user, password);
             //create the folder object and open it
@@ -35,9 +36,12 @@ public class CheckingMails {
             logger.info("The number of messages : " + messages.length);
             for (int i = 0, n = messages.length; i < n; i++) {
                 Message message = messages[i];
+                if (message.isSet(Flags.Flag.SEEN))
+                    continue;
                 String mailSubject = message.getSubject();
                 // get mail whose subject starts with "ITLAB-HOMEWORK"
                 if (Pattern.matches("ITLAB-HOMEWORK.*", mailSubject)) {
+                    numOfNewMsg++;
                     checkContentOfMessages(message, i);
                 }
             }
@@ -47,6 +51,7 @@ public class CheckingMails {
         } catch (MessagingException | IOException e) {
             logger.error(e.getMessage());
         }
+        return numOfNewMsg;
     }
 
     private static void checkContentOfMessages(Message message, int i) throws IOException, MessagingException {
@@ -87,6 +92,7 @@ public class CheckingMails {
         }
         if (isWrongMail) {
             addWrongFormatAddress(address);
+            message.setFlag(Flags.Flag.SEEN, true);
         }
     }
 
