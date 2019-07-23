@@ -18,10 +18,10 @@ import java.util.logging.Logger;
 @Aspect
 @Component
 public class AspectLogger {
-    private final String MSG_ENTER_USERNAME = "Enter username: ";
-    private final String MSG_ENTER_PASWORD = "Enter password: ";
-    private final String AD_USER = "admin";
-    private final String AD_PASS = "123";
+    private static final String MSG_ENTER_USERNAME = "Enter username: ";
+    private static final String MSG_ENTER_PASWORD = "Enter password: ";
+    private static final String AD_USER = "admin";
+    private static final String AD_PASS = "123";
     private static final Logger logger = Logger.getLogger(AspectLogger.class.getSimpleName());
 
     @Around("execution(* com.github.icovn.aop..*(..))")
