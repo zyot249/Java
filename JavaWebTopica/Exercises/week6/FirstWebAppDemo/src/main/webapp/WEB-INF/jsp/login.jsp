@@ -20,6 +20,7 @@
 
 </head>
 <body>
+<c:set var="message" value="${sessionScope.message}"/>
 <div class="my-container">
     <div class="form-main">
         <h1 class="font-main" style="text-align: center">Dictionary</h1>
@@ -37,12 +38,6 @@
         </div>
         <input class="btn btn-primary btn-block" id="btn-login" type="submit" value="Login">
     </form>
-    <div>
-        <div>
-            <small>You haven't an account yet?</small>
-        </div>
-        <input class="btn btn-success btn-block" id="btn-register" type="submit" value="Register">
-    </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

@@ -9,6 +9,10 @@
 </head>
 <body>
 <div class="container">
+    <div style="text-align: center">
+        <h1>My Dictionary</h1>
+        <small>Demo Version</small>
+    </div>
     <form action="${pageContext.request.contextPath}/authen">
         <input type="submit" class="btn btn-primary btn-block" value="Try Dictionary" style="margin-top: 100px">
     </form>

@@ -14,7 +14,7 @@
     <context:component-scan base-package="com.zyot.shyn"/>
 
     <!--Provide support for conversion, formatting and validation -->
-    <mvc:annotation-driven />
+    <mvc:annotation-driven/>
     <!-- Define Spring MVC view resolver -->
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/"/>
@@ -28,23 +28,23 @@
           destroy-method="close">
 
         <property name="driverClass"
-                  value="com.mysql.cj.jdbc.Driver" />
+                  value="com.mysql.cj.jdbc.Driver"/>
         <property name="jdbcUrl"
-                  value="jdbc:mysql://localhost:3306/dictionary?useSSL=false&amp;serverTimezone=UTC" />
-        <property name="user" value="root" />
-        <property name="password" value="conkuncon249" />
+                  value="jdbc:mysql://localhost:3306/dictionary?useSSL=false&amp;serverTimezone=UTC"/>
+        <property name="user" value="root"/>
+        <property name="password" value="conkuncon249"/>
 
-        <property name="minPoolSize" value="5" />
-        <property name="maxPoolSize" value="20" />
-        <property name="maxIdleTime" value="30000" />
+        <property name="minPoolSize" value="5"/>
+        <property name="maxPoolSize" value="20"/>
+        <property name="maxIdleTime" value="30000"/>
     </bean>
 
     <!-- setup hibernate session factory -->
     <bean id="sessionFactory"
           class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
-        <property name="dataSource" ref="c3p0DataSource" />
+        <property name="dataSource" ref="c3p0DataSource"/>
         <property name="packagesToScan"
-                  value="com.zyot.shyn.entities" />
+                  value="com.zyot.shyn.entities"/>
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect
@@ -64,5 +64,28 @@
 
     <!-- enable configuration of transactional behavior based on annotations -->
     <tx:annotation-driven
-            transaction-manager="myTransactionManager" />
+            transaction-manager="myTransactionManager"/>
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/authen"/>
+            <mvc:mapping path="/login"/>
+            <bean class="com.zyot.shyn.interceptor.LoginInterceptor"/>
+        </mvc:interceptor>
+
+        <mvc:interceptor>
+            <mvc:mapping path="/"/>
+            <mvc:mapping path="/search"/>
+            <mvc:mapping path="/logout"/>
+            <bean class="com.zyot.shyn.interceptor.SessionInterceptor"/>
+        </mvc:interceptor>
+
+        <mvc:interceptor>
+            <mvc:mapping path="/delete"/>
+            <mvc:mapping path="/update"/>
+            <mvc:mapping path="/edit"/>
+            <mvc:mapping path="/add"/>
+            <bean class="com.zyot.shyn.interceptor.AdministratorInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>
