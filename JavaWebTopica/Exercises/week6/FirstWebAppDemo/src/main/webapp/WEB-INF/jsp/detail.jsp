@@ -13,6 +13,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        a:-webkit-any-link {
+            text-decoration: #00000000;
+        }
+    </style>
 </head>
 <body>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
@@ -82,14 +87,17 @@
         <%--    Submit--%>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-4"></div>
-                <div class="col-sm-4">
-                    <button type="submit" class="btn btn-primary btn-block">Update</button>
+                <div class="col-sm-5"></div>
+                <div class="col-sm-2">
+                    <button type="submit" class="btn btn-outline-success btn-block">Update</button>
                 </div>
-                <div class="col-sm-4"></div>
+                <div class="col-sm-5"></div>
             </div>
         </div>
     </form>
+    <div style="text-align: center; color: red; font-size: 20px">
+        <small>${warning}</small>
+    </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

@@ -15,16 +15,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script>
-        var confirmDelete = (e) =>
-        {
+        function confirmDelete(e) {
             var id = e.target.getAttribute('data-word-id');
-            bootbox.confirm("Are you sure to delete this word?", function(result){
-                if (result){
-                    window.location.href=$("#context-path").val() + "/delete?wordId=" + id;
+            bootbox.confirm("Are you sure to delete this word?", function (result) {
+                if (result) {
+                    window.location.href = $("#context-path").val() + "/delete?wordId=" + id;
                 }
             });
-        };
+        }
     </script>
+    <style>
+        a:-webkit-any-link {
+            text-decoration: #00000000;
+        }
+    </style>
 </head>
 <body>
 <c:set var="name" value="${sessionScope.name}"/>
@@ -77,7 +81,7 @@
                 <div class="col-sm-10"></div>
                 <div class="col-sm-2">
                     <a href="${contextPath}/add">
-                        <button class="btn btn-primary btn-block">Add a word</button>
+                        <button class="btn btn-outline-primary btn-block">Add a word</button>
                     </a>
                 </div>
             </div>
@@ -85,43 +89,48 @@
     </c:if>
     <%--    End of form search--%>
     <c:if test="${not empty words}">
-        <table class="table table-bordered" style="min-height: 450px">
-            <thead>
-            <tr>
-                <th>Word</th>
-                <th>Meaning</th>
-                <c:if test="${isAdmin}">
-                    <th>Operations</th>
-                </c:if>
-            </tr>
-            </thead>
-            <tbody>
-            <c:forEach items="${words}" var="word">
+        <div style="min-height: 350px">
+            <table class="table table-bordered">
+                <thead>
                 <tr>
-                    <td>${word.word}</td>
-                    <td>${word.meaning}</td>
+                    <th>Word</th>
+                    <th>Meaning</th>
                     <c:if test="${isAdmin}">
-                        <c:url value="/edit" var="editUrl">
-                            <c:param name="wordId" value="${word.id}"/>
-                        </c:url>
-                        <c:url value="/delete" var="deleteUrl">
-                            <c:param name="wordId" value="${word.id}"/>
-                        </c:url>
-                        <td class="btn-group btn-group-sm">
-                            <a href="${editUrl}">
-                                <button
-                                        type="button" class="btn btn-warning btn-block">Edit
-                                </button>
-                            </a>
-                            <button type="button" class="btn btn-danger btn-block" onclick="confirmDelete(event)"
-                                    data-word-id="${word.id}">Delete
-                            </button>
-                        </td>
+                        <th>Operations</th>
                     </c:if>
                 </tr>
-            </c:forEach>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                <c:forEach items="${words}" var="word">
+                    <tr>
+                        <td>${word.word}</td>
+                        <td>${word.meaning}</td>
+                        <c:if test="${isAdmin}">
+                            <c:url value="/edit" var="editUrl">
+                                <c:param name="wordId" value="${word.id}"/>
+                            </c:url>
+                            <c:url value="/delete" var="deleteUrl">
+                                <c:param name="wordId" value="${word.id}"/>
+                            </c:url>
+                            <td>
+                                <div class="btn-group btn-group-sm">
+                                    <a href="${editUrl}" style="margin-right: 10px">
+                                        <button
+                                                type="button" class="btn btn-outline-warning btn-block">Edit
+                                        </button>
+                                    </a>
+                                    <button type="button" class="btn btn-outline-danger btn-block"
+                                            onclick="confirmDelete(event)"
+                                            data-word-id="${word.id}">Delete
+                                    </button>
+                                </div>
+                            </td>
+                        </c:if>
+                    </tr>
+                </c:forEach>
+                </tbody>
+            </table>
+        </div>
         <%--    Paging--%>
         <ul class="pagination justify-content-center">
             <c:forEach var="index" begin="1" end="${numOfPages}">
