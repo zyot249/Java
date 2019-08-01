@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <!-- Provide support for component scanning -->
+    <context:component-scan base-package="com.zyot.shyn"/>
+
+    <!--Provide support for conversion, formatting and validation -->
+    <mvc:annotation-driven/>
+    <!-- Define Spring MVC view resolver -->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+    <mvc:resources mapping="/resources/**" location="/resources/"
+                   cache-period="31556926"/>
+
+    <bean id="c3p0DataSource"
+          class="com.mchange.v2.c3p0.ComboPooledDataSource"
+          destroy-method="close">
+        <property name="driverClass"
+                  value="com.mysql.cj.jdbc.Driver"/>
+        <property name="jdbcUrl"
+                  value="jdbc:mysql://localhost:3306/dictionary?useSSL=false&amp;serverTimezone=UTC&amp;allowPublicKeyRetrieval=true"/>
+        <property name="user" value="root"/>
+        <property name="password" value="conkuncon249"/>
+
+        <property name="minPoolSize" value="5"/>
+        <property name="maxPoolSize" value="20"/>
+        <property name="maxIdleTime" value="30000"/>
+    </bean>
+
+    <bean id="entityManagerFactoryBean"
+          class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="packagesToScan"
+                  value="com.zyot.shyn.entities"/>
+        <property name="dataSource" ref="c3p0DataSource"/>
+        <property name="persistenceUnitName"
+                  value="DictionaryDB"/>
+    </bean>
+
+    <bean id="entityManager"
+          class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactoryBean"/>
+    </bean>
+    <tx:annotation-driven
+            transaction-manager="entityManager"/>
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/authen"/>
+            <mvc:mapping path="/login"/>
+            <bean class="com.zyot.shyn.interceptor.LoginInterceptor"/>
+        </mvc:interceptor>
+
+        <mvc:interceptor>
+            <mvc:mapping path="/"/>
+            <mvc:mapping path="/search"/>
+            <mvc:mapping path="/logout"/>
+            <bean class="com.zyot.shyn.interceptor.SessionInterceptor"/>
+        </mvc:interceptor>
+
+        <mvc:interceptor>
+            <mvc:mapping path="/delete"/>
+            <mvc:mapping path="/update"/>
+            <mvc:mapping path="/edit"/>
+            <mvc:mapping path="/add"/>
+            <bean class="com.zyot.shyn.interceptor.AdministratorInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+</beans>
