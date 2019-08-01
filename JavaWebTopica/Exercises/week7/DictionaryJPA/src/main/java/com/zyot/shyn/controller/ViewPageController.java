@@ -5,6 +5,7 @@ import com.zyot.shyn.common.SessionAttr;
 import com.zyot.shyn.dao.DictDao;
 import com.zyot.shyn.entities.DictEntity;
 import com.zyot.shyn.utils.PageRouter;
+import com.zyot.shyn.utils.PagingUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +20,7 @@ import java.util.List;
 
 @Controller
 public class ViewPageController {
-    private static final int PAGE_LIMIT = 6;
+    private static final int PAGE_LIMIT = 5;
 
     @Autowired
     private DictDao dictDao;
@@ -61,10 +62,12 @@ public class ViewPageController {
             numOfPages = (numOfResults / PAGE_LIMIT) + 1;
         } else numOfPages = numOfResults / PAGE_LIMIT;
         session.setAttribute(SessionAttr.DEFAULT_TYPE_ATTR, transType);
-
-        model.addAttribute("numOfPages", numOfPages);
+        int startPage = PagingUtils.getStartIndex(page + 1);
+        int endPage = PagingUtils.getEndIndex(page + 1, numOfPages);
         model.addAttribute("curKeyword", keyword);
         model.addAttribute("curPageIndex", pageIndex);
+        model.addAttribute("startIndex", startPage);
+        model.addAttribute("endIndex", endPage);
         return PageRouter.VIEW_PAGE;
     }
 

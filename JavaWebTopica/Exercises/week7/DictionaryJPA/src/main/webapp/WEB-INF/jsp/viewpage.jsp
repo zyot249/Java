@@ -133,7 +133,7 @@
         </div>
         <%--    Paging--%>
         <ul class="pagination justify-content-center">
-            <c:forEach var="index" begin="1" end="${numOfPages}">
+            <c:forEach var="index" begin="${startIndex}" end="${endIndex}">
                 <c:if test="${index == curPageIndex}">
                     <li class="page-item active"><a class="page-link"
                                                     href="${contextPath}/search?keyword=${curKeyword}&type=${sessionScope.curTransType}&pageIndex=${index}">${index}</a>
