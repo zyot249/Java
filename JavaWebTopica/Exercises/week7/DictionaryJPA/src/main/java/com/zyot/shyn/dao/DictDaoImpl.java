@@ -13,6 +13,7 @@ import java.util.List;
 @Repository
 @Primary
 public class DictDaoImpl implements DictDao {
+    private static final String TRANS_TYPE_PARAM = "transType";
     @PersistenceContext
     private EntityManager entityManager;
 
@@ -23,7 +24,7 @@ public class DictDaoImpl implements DictDao {
         String findWordQuery = "SELECT d FROM DictEntity as d WHERE d.word LIKE :keyword AND d.type = :transType";
         TypedQuery<DictEntity> query = entityManager.createQuery(findWordQuery, DictEntity.class)
                 .setParameter("keyword", String.format("%s%%", keyword))
-                .setParameter("transType", transType);
+                .setParameter(TRANS_TYPE_PARAM, transType);
         words = query.getResultList();
         return words;
     }
@@ -45,7 +46,7 @@ public class DictDaoImpl implements DictDao {
         String findWordQuery = "SELECT d FROM DictEntity as d WHERE d.word LIKE :keyword AND d.type = :transType";
         TypedQuery<DictEntity> query = entityManager.createQuery(findWordQuery, DictEntity.class)
                 .setParameter("keyword", String.format("%s%%", keyword))
-                .setParameter("transType", transType)
+                .setParameter(TRANS_TYPE_PARAM, transType)
                 .setFirstResult(pageLimit * pageIndex)
                 .setMaxResults(pageLimit);
         words = query.getResultList();
@@ -85,7 +86,7 @@ public class DictDaoImpl implements DictDao {
         String findWordQuery = "SELECT d FROM DictEntity as d WHERE d.word= :word AND d.type = :transType AND d.meaning = :meaning";
         TypedQuery<DictEntity> query = entityManager.createQuery(findWordQuery, DictEntity.class)
                 .setParameter("word", word)
-                .setParameter("transType", transType)
+                .setParameter(TRANS_TYPE_PARAM, transType)
                 .setParameter("meaning", meaning);
         words = query.getResultList();
         return words;

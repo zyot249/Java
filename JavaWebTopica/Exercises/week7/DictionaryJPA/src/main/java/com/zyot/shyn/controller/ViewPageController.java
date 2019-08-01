@@ -56,7 +56,7 @@ public class ViewPageController {
         List<DictEntity> totalWords = dictDao.findWordByKeyword(keyword, transType);
         int numOfResults = totalWords.size();
         model.addAttribute("words", words);
-        int numOfPages = 1;
+        int numOfPages;
         if (numOfResults % PAGE_LIMIT != 0) {
             numOfPages = (numOfResults / PAGE_LIMIT) + 1;
         } else numOfPages = numOfResults / PAGE_LIMIT;

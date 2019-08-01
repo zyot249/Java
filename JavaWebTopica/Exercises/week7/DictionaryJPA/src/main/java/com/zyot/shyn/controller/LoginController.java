@@ -7,7 +7,6 @@ import com.zyot.shyn.dao.UserDao;
 import com.zyot.shyn.utils.PageRouter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -36,7 +35,7 @@ public class LoginController {
     }
 
     @GetMapping("/login")
-    public String loginByGetMethod(HttpServletRequest request, Model model) {
+    public String loginByGetMethod(HttpServletRequest request) {
         HttpSession session = request.getSession();
         Object role = session.getAttribute(SessionAttr.ROLE_ATTR);
         if (role == null)
