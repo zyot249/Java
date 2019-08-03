@@ -3,6 +3,7 @@ package com.zyot.shyn.servicereleasemanagement.controller;
 import com.zyot.shyn.servicereleasemanagement.exception.ResourceNotFoundException;
 import com.zyot.shyn.servicereleasemanagement.model.ReleaseEntity;
 import com.zyot.shyn.servicereleasemanagement.model.ServiceEntity;
+import com.zyot.shyn.servicereleasemanagement.model.criteria.ServiceCriteria;
 import com.zyot.shyn.servicereleasemanagement.service.ReleaseEntityService;
 import com.zyot.shyn.servicereleasemanagement.service.ServiceEntityService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,6 +61,19 @@ public class ServiceController {
 
     }
 
+    @GetMapping("/api/service/get-by-env-and-nsp")
+    public Page<ServiceEntity> getListOfServicesByEnvironmentAndNamespace(@RequestParam(name = "environment") String environment,
+                                                                          @RequestParam(name = "namespace") String namespace,
+                                                                          Pageable pageable) {
+        return serviceEntityService.findAllByEnvironmentAndNamespace(environment, namespace, pageable);
+    }
+
+    @GetMapping("/api/service/get-list-versions-by-service/{name}")
+    public Page<String> getListOfVersionsByService(@PathVariable("name") String name,
+                                                   Pageable pageable) {
+        return serviceEntityService.getListOfVersionsByServiceName(name, pageable);
+    }
+
     // CRUD
     @GetMapping("/release/{releaseId}/service")
     public Page<ServiceEntity> getAllServicesByReleaseId(@PathVariable("releaseId") String releaseId,
@@ -69,25 +83,24 @@ public class ServiceController {
 
     @PostMapping("/release/{releaseId}/service")
     public ServiceEntity addService(@PathVariable("releaseId") String releaseId,
-                                    @Valid @RequestBody ServiceEntity serviceEntity) {
-        return releaseEntityService.findById(releaseId).map(release -> {
-            serviceEntity.setReleaseByReleaseid(release);
-            return serviceEntityService.save(serviceEntity);
-        }).orElseThrow(() -> new ResourceNotFoundException("Release with id:" + releaseId + " not found!"));
+                                    @Valid @RequestBody ServiceCriteria serviceCriteria) {
+        return releaseEntityService.findById(releaseId).map(release ->
+                serviceEntityService.save(new ServiceEntity(serviceCriteria, release))
+        ).orElseThrow(() -> new ResourceNotFoundException("Release with id:" + releaseId + " not found!"));
     }
 
     @PutMapping("/release/{releaseId}/service/{serviceId}")
     public ServiceEntity updateService(@PathVariable("releaseId") String releaseId,
                                        @PathVariable("serviceId") String serviceId,
-                                       @Valid @RequestBody ServiceEntity serviceEntity) {
+                                       @Valid @RequestBody ServiceCriteria serviceCriteria) {
         if (!releaseEntityService.existsById(releaseId))
             throw new ResourceNotFoundException("Release with id:" + releaseId + " not found!");
         return serviceEntityService.findById(serviceId).map(service -> {
-            service.setName(serviceEntity.getName());
-            service.setEnvironment(serviceEntity.getEnvironment());
-            service.setNamespace(serviceEntity.getNamespace());
-            service.setOldversion(serviceEntity.getOldversion());
-            service.setNewversion(serviceEntity.getNewversion());
+            service.setName(serviceCriteria.getName());
+            service.setEnvironment(serviceCriteria.getEnvironment());
+            service.setNamespace(serviceCriteria.getNamespace());
+            service.setOldversion(serviceCriteria.getOldversion());
+            service.setNewversion(serviceCriteria.getNewversion());
             return serviceEntityService.save(service);
         }).orElseThrow(() -> new ResourceNotFoundException("Service with id:" + serviceId + " not found!"));
     }

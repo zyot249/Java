@@ -22,4 +22,6 @@ public interface ServiceEntityService {
     Page<ServiceEntity> findAllServicesByReleaseId(String releaseId, Pageable pageable);
 
     Optional<ServiceEntity> findByIdAndReleaseId(String id, String releaseId);
+
+    Page<String> getListOfVersionsByServiceName(String name, Pageable pageable);
 }

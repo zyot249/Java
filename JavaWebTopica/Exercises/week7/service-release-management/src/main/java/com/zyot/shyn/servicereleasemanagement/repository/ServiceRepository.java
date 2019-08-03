@@ -8,9 +8,11 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 import java.util.Optional;
 
 public interface ServiceRepository extends PagingAndSortingRepository<ServiceEntity, String> {
-    Page<ServiceEntity> findAllByEnvironmentAndNamespace(String environment, String namespace, Pageable pageable);
+    Page<ServiceEntity> findDistinctByEnvironmentAndNamespace(String environment, String namespace, Pageable pageable);
 
     Page<ServiceEntity> findAllByReleaseByReleaseidId(String releaseId, Pageable pageable);
 
     Optional<ServiceEntity> findByIdAndReleaseByReleaseidId(String id, String releaseId);
+
+    Page<ServiceEntity> findAllByName(String name, Pageable pageable);
 }

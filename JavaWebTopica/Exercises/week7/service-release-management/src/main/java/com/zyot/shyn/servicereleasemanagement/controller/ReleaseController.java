@@ -61,8 +61,8 @@ public class ReleaseController {
     //CRUD
 
     @PostMapping("/release")
-    public ReleaseEntity createRelease(@Valid @RequestBody ReleaseEntity releaseEntity) {
-        return releaseEntityService.save(releaseEntity);
+    public ReleaseEntity createRelease(@Valid @RequestBody ReleaseCriteria releaseCriteria) {
+        return releaseEntityService.save(new ReleaseEntity(releaseCriteria));
     }
 
     @GetMapping("/release")
@@ -72,11 +72,11 @@ public class ReleaseController {
 
     @PutMapping("/release/{id}")
     public ReleaseEntity updateRelease(@PathVariable("id") String id,
-                                       @Valid @RequestBody ReleaseEntity releaseEntity) {
+                                       @Valid @RequestBody ReleaseCriteria releaseCriteria) {
         return releaseEntityService.findById(id).map(release -> {
-            release.setName(releaseEntity.getName());
-            release.setDescription(releaseEntity.getDescription());
-            release.setCreatedby(releaseEntity.getCreatedby());
+            release.setName(releaseCriteria.getName());
+            release.setDescription(releaseCriteria.getDescription());
+            release.setCreatedby(releaseCriteria.getCreatedby());
             return releaseEntityService.save(release);
         }).orElseThrow(() -> new ResourceNotFoundException("Release with id:" + id + " not found!"));
     }

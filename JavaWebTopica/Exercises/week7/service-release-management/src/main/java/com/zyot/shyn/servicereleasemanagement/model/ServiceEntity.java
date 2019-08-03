@@ -1,6 +1,7 @@
 package com.zyot.shyn.servicereleasemanagement.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.zyot.shyn.servicereleasemanagement.model.criteria.ServiceCriteria;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -28,6 +29,14 @@ public class ServiceEntity {
         this.namespace = namespace;
         this.oldversion = oldversion;
         this.newversion = newversion;
+        this.releaseByReleaseid = releaseByReleaseid;
+    }
+    public ServiceEntity(ServiceCriteria serviceCriteria, ReleaseEntity releaseByReleaseid){
+        this.name = serviceCriteria.getName();
+        this.environment = serviceCriteria.getEnvironment();
+        this.namespace = serviceCriteria.getNamespace();
+        this.oldversion = serviceCriteria.getOldversion();
+        this.newversion = serviceCriteria.getNewversion();
         this.releaseByReleaseid = releaseByReleaseid;
     }
 

@@ -22,7 +22,7 @@ public class ServiceEntityServiceImpl implements ServiceEntityService {
 
     @Override
     public Optional<ServiceEntity> findById(String id) {
-        return Optional.empty();
+        return serviceRepository.findById(id);
     }
 
     @Override
@@ -42,7 +42,7 @@ public class ServiceEntityServiceImpl implements ServiceEntityService {
 
     @Override
     public Page<ServiceEntity> findAllByEnvironmentAndNamespace(String environment, String namespace, Pageable pageable) {
-        return serviceRepository.findAllByEnvironmentAndNamespace(environment, namespace, pageable);
+        return serviceRepository.findDistinctByEnvironmentAndNamespace(environment, namespace, pageable);
     }
 
     @Override
@@ -53,5 +53,11 @@ public class ServiceEntityServiceImpl implements ServiceEntityService {
     @Override
     public Optional<ServiceEntity> findByIdAndReleaseId(String id, String releaseId) {
         return serviceRepository.findByIdAndReleaseByReleaseidId(id, releaseId);
+    }
+
+    @Override
+    public Page<String> getListOfVersionsByServiceName(String name, Pageable pageable) {
+        Page<ServiceEntity> services = serviceRepository.findAllByName(name, pageable);
+        return services.map(ServiceEntity::getNewversion);
     }
 }
