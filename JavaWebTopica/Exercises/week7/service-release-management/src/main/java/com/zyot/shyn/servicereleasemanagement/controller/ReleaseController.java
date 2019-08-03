@@ -39,7 +39,7 @@ public class ReleaseController {
     public Optional<ReleaseEntity> findById(@PathVariable String id) {
         if (id != null)
             return releaseEntityService.findById(id);
-        else return null;
+        else return Optional.empty();
     }
 
     @GetMapping("/delete/{id}")

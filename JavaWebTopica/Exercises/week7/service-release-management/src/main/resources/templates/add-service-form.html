@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Service Form</title>
+</head>
+<body>
+<div class="container">
+    <form action="/api/service/create" method="post">
+        <table>
+            <tr>
+                <td>
+                    <input type="text" name="name" placeholder="Name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="environment" placeholder="Environment">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="namespace" placeholder="Namespace">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="oldVersion" placeholder="Old Version">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="newVersion" placeholder="New Version">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" name="releaseId" placeholder="Release Id">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

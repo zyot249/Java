@@ -16,6 +16,18 @@ public class ServiceEntity {
     private String newversion;
     private ReleaseEntity releaseByReleaseid;
 
+    public ServiceEntity() {
+    }
+
+    public ServiceEntity(String name, String environment, String namespace, String oldversion, String newversion, ReleaseEntity releaseByReleaseid) {
+        this.name = name;
+        this.environment = environment;
+        this.namespace = namespace;
+        this.oldversion = oldversion;
+        this.newversion = newversion;
+        this.releaseByReleaseid = releaseByReleaseid;
+    }
+
     @Id
     @GenericGenerator(name = "id_generator", strategy = "com.zyot.shyn.servicereleasemanagement.utils.IdGenerator")
     @GeneratedValue(generator = "id_generator")
