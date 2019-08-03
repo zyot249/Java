@@ -18,4 +18,6 @@ public interface ReleaseEntityService {
     Page<ReleaseEntity> findByCreator(String name, Pageable pageable);
 
     Page<ReleaseEntity> findAll(Pageable pageable);
+
+    boolean existsById(String releaseId);
 }

@@ -16,4 +16,10 @@ public interface ServiceEntityService {
     void delete(ServiceEntity service);
 
     Page<ServiceEntity> findAll(Pageable pageable);
+
+    Page<ServiceEntity> findAllByEnvironmentAndNamespace(String environment, String namespace, Pageable pageable);
+
+    Page<ServiceEntity> findAllServicesByReleaseId(String releaseId, Pageable pageable);
+
+    Optional<ServiceEntity> findByIdAndReleaseId(String id, String releaseId);
 }

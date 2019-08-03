@@ -12,11 +12,13 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/").permitAll()
-                .antMatchers("/api/release**").permitAll()
+                .antMatchers("/api/release/**").permitAll()
                 .antMatchers("/api/service/**").permitAll()
                 .antMatchers("/api/**").permitAll()
+                .antMatchers("release/**/service/**").permitAll()
+                .antMatchers("release/**/**").permitAll()
                 .antMatchers("/release/**").permitAll()
-                .antMatchers("/service/**").permitAll();
+                .antMatchers("/**").permitAll();
 
         http.csrf().disable();
         http.headers().frameOptions().disable();

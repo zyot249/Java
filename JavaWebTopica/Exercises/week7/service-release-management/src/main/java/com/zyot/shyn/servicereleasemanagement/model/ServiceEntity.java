@@ -1,6 +1,9 @@
 package com.zyot.shyn.servicereleasemanagement.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -108,8 +111,10 @@ public class ServiceEntity {
         return Objects.hash(id, name, environment, namespace, oldversion, newversion);
     }
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "RELEASEID", referencedColumnName = "ID", nullable = false)
+    @JsonIgnore
+    @OnDelete(action = OnDeleteAction.CASCADE)
     public ReleaseEntity getReleaseByReleaseid() {
         return releaseByReleaseid;
     }

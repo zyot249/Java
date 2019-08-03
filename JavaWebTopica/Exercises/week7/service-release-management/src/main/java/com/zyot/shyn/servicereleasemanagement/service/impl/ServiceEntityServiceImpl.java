@@ -39,4 +39,19 @@ public class ServiceEntityServiceImpl implements ServiceEntityService {
     public Page<ServiceEntity> findAll(Pageable pageable) {
         return serviceRepository.findAll(pageable);
     }
+
+    @Override
+    public Page<ServiceEntity> findAllByEnvironmentAndNamespace(String environment, String namespace, Pageable pageable) {
+        return serviceRepository.findAllByEnvironmentAndNamespace(environment, namespace, pageable);
+    }
+
+    @Override
+    public Page<ServiceEntity> findAllServicesByReleaseId(String releaseId, Pageable pageable) {
+        return serviceRepository.findAllByReleaseByReleaseidId(releaseId, pageable);
+    }
+
+    @Override
+    public Optional<ServiceEntity> findByIdAndReleaseId(String id, String releaseId) {
+        return serviceRepository.findByIdAndReleaseByReleaseidId(id, releaseId);
+    }
 }

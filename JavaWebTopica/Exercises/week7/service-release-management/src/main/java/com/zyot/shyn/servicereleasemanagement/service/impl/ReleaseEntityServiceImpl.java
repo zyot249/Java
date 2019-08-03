@@ -44,4 +44,9 @@ public class ReleaseEntityServiceImpl implements ReleaseEntityService {
     public Page<ReleaseEntity> findAll(Pageable pageable) {
         return releaseRepository.findAll(pageable);
     }
+
+    @Override
+    public boolean existsById(String releaseId) {
+        return releaseRepository.existsById(releaseId);
+    }
 }
