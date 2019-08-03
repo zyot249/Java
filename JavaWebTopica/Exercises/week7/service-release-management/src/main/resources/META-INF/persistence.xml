@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+        http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <persistence-unit name="ReleaseManagement">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>com.zyot.shyn.servicereleasemanagement.model.ReleaseEntity</class>
+        <class>com.zyot.shyn.servicereleasemanagement.model.ServiceEntity</class>
+        <properties>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
+            <property name="hibernate.connection.url"
+                      value="jdbc:h2:file:~/Github/zyot249/Java/JavaWebTopica/Exercises/week7/service-release-management/db/ReleaseManagement"/>
+            <property name="hibernate.connection.driver_class" value="org.h2.Driver"/>
+        </properties>
+    </persistence-unit>
+</persistence>
