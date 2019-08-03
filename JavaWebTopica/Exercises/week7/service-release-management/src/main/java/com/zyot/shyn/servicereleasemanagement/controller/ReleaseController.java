@@ -1,12 +1,12 @@
 package com.zyot.shyn.servicereleasemanagement.controller;
 
+import com.zyot.shyn.servicereleasemanagement.common.Messages;
 import com.zyot.shyn.servicereleasemanagement.exception.ResourceNotFoundException;
 import com.zyot.shyn.servicereleasemanagement.model.ReleaseEntity;
 import com.zyot.shyn.servicereleasemanagement.model.criteria.ReleaseCriteria;
 import com.zyot.shyn.servicereleasemanagement.service.ReleaseEntityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +19,7 @@ public class ReleaseController {
     @Autowired
     private ReleaseEntityService releaseEntityService;
 
+    // test
     @PostMapping(value = "/api/release/create")
     public ReleaseEntity addNewRelease(@RequestParam(name = "name") String name,
                                        @RequestParam(name = "description") String description,
@@ -34,8 +35,9 @@ public class ReleaseController {
     }
 
     @PostMapping("/api/release/find-by-creator")
-    public Page<ReleaseEntity> findAllByCreator(@RequestParam(name = "name") String name) {
-        return releaseEntityService.findByCreator(name, new PageRequest(0, 10));
+    public Page<ReleaseEntity> findAllByCreator(@RequestParam(name = "name") String name,
+                                                Pageable pageable) {
+        return releaseEntityService.findByCreator(name, pageable);
     }
 
     @GetMapping("/api/release/{id}")
@@ -54,8 +56,8 @@ public class ReleaseController {
     }
 
     @GetMapping("/api/release/list")
-    public Page<ReleaseEntity> findAll() {
-        return releaseEntityService.findAll(new PageRequest(0, 10));
+    public Page<ReleaseEntity> findAll(Pageable pageable) {
+        return releaseEntityService.findAll(pageable);
     }
 
     //CRUD
@@ -78,7 +80,7 @@ public class ReleaseController {
             release.setDescription(releaseCriteria.getDescription());
             release.setCreatedby(releaseCriteria.getCreatedby());
             return releaseEntityService.save(release);
-        }).orElseThrow(() -> new ResourceNotFoundException("Release with id:" + id + " not found!"));
+        }).orElseThrow(() -> new ResourceNotFoundException("Release with id:" + id + Messages.MSG_NOTFOUND));
     }
 
     @DeleteMapping("/release/{id}")
@@ -86,6 +88,6 @@ public class ReleaseController {
         return releaseEntityService.findById(id).map(release -> {
             releaseEntityService.delete(release);
             return ResponseEntity.ok().build();
-        }).orElseThrow(() -> new ResourceNotFoundException("Release with id:" + id + " not found!"));
+        }).orElseThrow(() -> new ResourceNotFoundException("Release with id:" + id + Messages.MSG_NOTFOUND));
     }
 }

@@ -1,5 +1,6 @@
 package com.zyot.shyn.servicereleasemanagement.controller;
 
+import com.zyot.shyn.servicereleasemanagement.common.Messages;
 import com.zyot.shyn.servicereleasemanagement.exception.ResourceNotFoundException;
 import com.zyot.shyn.servicereleasemanagement.model.ReleaseEntity;
 import com.zyot.shyn.servicereleasemanagement.model.ServiceEntity;
@@ -8,7 +9,6 @@ import com.zyot.shyn.servicereleasemanagement.service.ReleaseEntityService;
 import com.zyot.shyn.servicereleasemanagement.service.ServiceEntityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +24,7 @@ public class ServiceController {
     @Autowired
     private ReleaseEntityService releaseEntityService;
 
+    // test
     @GetMapping("/api/service/{id}")
     public Optional<ServiceEntity> findById(@PathVariable("id") String id) {
         if (id != null) {
@@ -40,8 +41,8 @@ public class ServiceController {
     }
 
     @GetMapping("/api/service/list")
-    public Page<ServiceEntity> findAll() {
-        return serviceEntityService.findAll(new PageRequest(0, 10));
+    public Page<ServiceEntity> findAll(Pageable pageable) {
+        return serviceEntityService.findAll(pageable);
     }
 
     @PostMapping("/api/service/create")
@@ -61,6 +62,7 @@ public class ServiceController {
 
     }
 
+    // API
     @GetMapping("/api/service/get-by-env-and-nsp")
     public Page<ServiceEntity> getListOfServicesByEnvironmentAndNamespace(@RequestParam(name = "environment") String environment,
                                                                           @RequestParam(name = "namespace") String namespace,
@@ -68,8 +70,8 @@ public class ServiceController {
         return serviceEntityService.findAllByEnvironmentAndNamespace(environment, namespace, pageable);
     }
 
-    @GetMapping("/api/service/get-list-versions-by-service/{name}")
-    public Page<String> getListOfVersionsByService(@PathVariable("name") String name,
+    @GetMapping("/api/service/get-list-versions-by-service")
+    public Page<String> getListOfVersionsByService(@RequestParam(name = "name") String name,
                                                    Pageable pageable) {
         return serviceEntityService.getListOfVersionsByServiceName(name, pageable);
     }
@@ -86,7 +88,7 @@ public class ServiceController {
                                     @Valid @RequestBody ServiceCriteria serviceCriteria) {
         return releaseEntityService.findById(releaseId).map(release ->
                 serviceEntityService.save(new ServiceEntity(serviceCriteria, release))
-        ).orElseThrow(() -> new ResourceNotFoundException("Release with id:" + releaseId + " not found!"));
+        ).orElseThrow(() -> new ResourceNotFoundException("Release with id:" + releaseId + Messages.MSG_NOTFOUND));
     }
 
     @PutMapping("/release/{releaseId}/service/{serviceId}")
@@ -94,7 +96,7 @@ public class ServiceController {
                                        @PathVariable("serviceId") String serviceId,
                                        @Valid @RequestBody ServiceCriteria serviceCriteria) {
         if (!releaseEntityService.existsById(releaseId))
-            throw new ResourceNotFoundException("Release with id:" + releaseId + " not found!");
+            throw new ResourceNotFoundException("Release with id:" + releaseId + Messages.MSG_NOTFOUND);
         return serviceEntityService.findById(serviceId).map(service -> {
             service.setName(serviceCriteria.getName());
             service.setEnvironment(serviceCriteria.getEnvironment());
@@ -102,7 +104,7 @@ public class ServiceController {
             service.setOldversion(serviceCriteria.getOldversion());
             service.setNewversion(serviceCriteria.getNewversion());
             return serviceEntityService.save(service);
-        }).orElseThrow(() -> new ResourceNotFoundException("Service with id:" + serviceId + " not found!"));
+        }).orElseThrow(() -> new ResourceNotFoundException("Service with id:" + serviceId + Messages.MSG_NOTFOUND));
     }
 
     @DeleteMapping("/release/{releaseId}/service/{serviceId}")
