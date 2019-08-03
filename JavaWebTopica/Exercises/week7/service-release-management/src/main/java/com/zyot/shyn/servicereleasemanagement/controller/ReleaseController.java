@@ -12,53 +12,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.Optional;
 
 @RestController
 public class ReleaseController {
     @Autowired
     private ReleaseEntityService releaseEntityService;
-
-    // test
-    @PostMapping(value = "/api/release/create")
-    public ReleaseEntity addNewRelease(@RequestParam(name = "name") String name,
-                                       @RequestParam(name = "description") String description,
-                                       @RequestParam(name = "createdBy") String createdBy) {
-        ReleaseEntity release = new ReleaseEntity(new ReleaseCriteria(name, description, createdBy));
-        return releaseEntityService.save(release);
-
-    }
-
-    @GetMapping("/api/release/create")
-    public String testCreate() {
-        return "successfully";
-    }
-
-    @PostMapping("/api/release/find-by-creator")
-    public Page<ReleaseEntity> findAllByCreator(@RequestParam(name = "name") String name,
-                                                Pageable pageable) {
-        return releaseEntityService.findByCreator(name, pageable);
-    }
-
-    @GetMapping("/api/release/{id}")
-    public Optional<ReleaseEntity> findById(@PathVariable String id) {
-        if (id != null)
-            return releaseEntityService.findById(id);
-        else return Optional.empty();
-    }
-
-    @GetMapping("/api/release/delete/{id}")
-    public String deleteReleaseById(@PathVariable String id) {
-        if (id != null) {
-            releaseEntityService.delete(id);
-            return "successfully";
-        } else return "Id must be not null";
-    }
-
-    @GetMapping("/api/release/list")
-    public Page<ReleaseEntity> findAll(Pageable pageable) {
-        return releaseEntityService.findAll(pageable);
-    }
 
     //CRUD
 
@@ -80,7 +38,7 @@ public class ReleaseController {
             release.setDescription(releaseCriteria.getDescription());
             release.setCreatedby(releaseCriteria.getCreatedby());
             return releaseEntityService.save(release);
-        }).orElseThrow(() -> new ResourceNotFoundException("Release with id:" + id + Messages.MSG_NOTFOUND));
+        }).orElseThrow(() -> new ResourceNotFoundException(String.format(Messages.MSG_RELEASE_NOT_FOUND_FORMAT, id)));
     }
 
     @DeleteMapping("/release/{id}")
@@ -88,6 +46,6 @@ public class ReleaseController {
         return releaseEntityService.findById(id).map(release -> {
             releaseEntityService.delete(release);
             return ResponseEntity.ok().build();
-        }).orElseThrow(() -> new ResourceNotFoundException("Release with id:" + id + Messages.MSG_NOTFOUND));
+        }).orElseThrow(() -> new ResourceNotFoundException(String.format(Messages.MSG_RELEASE_NOT_FOUND_FORMAT, id)));
     }
 }

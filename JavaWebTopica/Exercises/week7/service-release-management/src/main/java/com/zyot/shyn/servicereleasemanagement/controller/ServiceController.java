@@ -2,7 +2,6 @@ package com.zyot.shyn.servicereleasemanagement.controller;
 
 import com.zyot.shyn.servicereleasemanagement.common.Messages;
 import com.zyot.shyn.servicereleasemanagement.exception.ResourceNotFoundException;
-import com.zyot.shyn.servicereleasemanagement.model.ReleaseEntity;
 import com.zyot.shyn.servicereleasemanagement.model.ServiceEntity;
 import com.zyot.shyn.servicereleasemanagement.model.criteria.ServiceCriteria;
 import com.zyot.shyn.servicereleasemanagement.service.ReleaseEntityService;
@@ -14,7 +13,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.Optional;
 
 @RestController
 public class ServiceController {
@@ -23,44 +21,6 @@ public class ServiceController {
 
     @Autowired
     private ReleaseEntityService releaseEntityService;
-
-    // test
-    @GetMapping("/api/service/{id}")
-    public Optional<ServiceEntity> findById(@PathVariable("id") String id) {
-        if (id != null) {
-            return serviceEntityService.findById(id);
-        } else return Optional.empty();
-    }
-
-    @GetMapping("/api/service/delete/{id}")
-    public String deleteById(@PathVariable String id) {
-        if (id != null) {
-            serviceEntityService.delete(id);
-            return "successfully";
-        } else return "Id must be not null";
-    }
-
-    @GetMapping("/api/service/list")
-    public Page<ServiceEntity> findAll(Pageable pageable) {
-        return serviceEntityService.findAll(pageable);
-    }
-
-    @PostMapping("/api/service/create")
-    public ServiceEntity addNewService(@RequestParam(name = "name") String name,
-                                       @RequestParam(name = "environment") String environment,
-                                       @RequestParam(name = "namespace") String namespace,
-                                       @RequestParam(name = "oldVersion") String oldVersion,
-                                       @RequestParam(name = "newVersion") String newVersion,
-                                       @RequestParam(name = "releaseId") String releaseId) {
-        Optional<ReleaseEntity> releaseEntity = releaseEntityService.findById(releaseId);
-        return releaseEntity.map(entity -> serviceEntityService.save(new ServiceEntity(name,
-                environment,
-                namespace,
-                oldVersion,
-                newVersion,
-                entity))).orElse(null);
-
-    }
 
     // API
     @GetMapping("/api/service/get-by-env-and-nsp")
@@ -83,12 +43,20 @@ public class ServiceController {
         return serviceEntityService.findAllServicesByReleaseId(releaseId, pageable);
     }
 
+    @GetMapping("/release/{releaseId}/service/{serviceId}")
+    public ServiceEntity getServiceByID(@PathVariable("releaseId") String releaseId,
+                                        @PathVariable("serviceId") String serviceId) {
+        if (!releaseEntityService.existsById(releaseId))
+            throw new ResourceNotFoundException(String.format(Messages.MSG_RELEASE_NOT_FOUND_FORMAT, releaseId));
+        return serviceEntityService.findById(serviceId).orElseThrow(() -> new ResourceNotFoundException(String.format(Messages.MSG_SERVICE_NOT_FOUND_FORMAT, serviceId)));
+    }
+
     @PostMapping("/release/{releaseId}/service")
     public ServiceEntity addService(@PathVariable("releaseId") String releaseId,
                                     @Valid @RequestBody ServiceCriteria serviceCriteria) {
         return releaseEntityService.findById(releaseId).map(release ->
                 serviceEntityService.save(new ServiceEntity(serviceCriteria, release))
-        ).orElseThrow(() -> new ResourceNotFoundException("Release with id:" + releaseId + Messages.MSG_NOTFOUND));
+        ).orElseThrow(() -> new ResourceNotFoundException(String.format(Messages.MSG_RELEASE_NOT_FOUND_FORMAT, releaseId)));
     }
 
     @PutMapping("/release/{releaseId}/service/{serviceId}")
@@ -96,7 +64,7 @@ public class ServiceController {
                                        @PathVariable("serviceId") String serviceId,
                                        @Valid @RequestBody ServiceCriteria serviceCriteria) {
         if (!releaseEntityService.existsById(releaseId))
-            throw new ResourceNotFoundException("Release with id:" + releaseId + Messages.MSG_NOTFOUND);
+            throw new ResourceNotFoundException(String.format(Messages.MSG_RELEASE_NOT_FOUND_FORMAT, releaseId));
         return serviceEntityService.findById(serviceId).map(service -> {
             service.setName(serviceCriteria.getName());
             service.setEnvironment(serviceCriteria.getEnvironment());
@@ -104,7 +72,7 @@ public class ServiceController {
             service.setOldversion(serviceCriteria.getOldversion());
             service.setNewversion(serviceCriteria.getNewversion());
             return serviceEntityService.save(service);
-        }).orElseThrow(() -> new ResourceNotFoundException("Service with id:" + serviceId + Messages.MSG_NOTFOUND));
+        }).orElseThrow(() -> new ResourceNotFoundException(String.format(Messages.MSG_SERVICE_NOT_FOUND_FORMAT, serviceId)));
     }
 
     @DeleteMapping("/release/{releaseId}/service/{serviceId}")
